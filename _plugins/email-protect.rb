@@ -1,0 +1,38 @@
+module Jekyll
+  module EmailProtect
+    module EmailProtectionFilter
+
+      # Percent-encode alphanumeric characters of an email address
+      def encode_email(input)
+        input.to_s.chars.inject(String.new) do |result, char|
+          if char =~ /\p{Alnum}/
+            char.bytes.inject(result) do |result, byte|
+              result << '%%%02X' % byte
+            end
+          else
+            result << char
+          end
+        end
+      end
+    end
+  end
+end
+
+
+module Jekyll
+  module EmailTexify
+    module EmailTextifyFilter
+
+            # Produce safe text version of an email address like this example@e.com -> [example] at [e] o [com]
+      def textify_email(input)
+        result = input.dup
+        result.gsub!('@', '] at [')
+        result.gsub!('.', '] o [')
+        result = "[" << result << "]"
+      end
+    end
+  end
+end
+
+Liquid::Template.register_filter(Jekyll::EmailProtect::EmailProtectionFilter)
+Liquid::Template.register_filter(Jekyll::EmailTexify::EmailTextifyFilter)

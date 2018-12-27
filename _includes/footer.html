@@ -1,0 +1,63 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.course | escape }} {{ site.semester }} {{ site.year }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+		<h2 class="footer-heading">Instructor</h2>
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.instructor -%}
+              <a href="{{ site.instructor.webpage }}">{{ site.instructor.name | escape }}</a>
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+            </li>
+            {%- if site.instructor.email -%}
+             <li>Email: <a class="u-email" href="mailto:{{ site.instructor.email | encode_email }}">{{ site.instructor.email | textify_email }}</a></li>
+            {%- endif -%}
+			{% if site.instructor.phone %}
+			<li>Phone: {{ site.instructor.phone }}
+			{% endif %}
+			{% if site.instructor.officehours %}
+			<li>Office Hours: {{ site.instructor.officehours }}
+			  {% endif %}
+			<li><br/>	<p>
+		Department of Computer Science<br/>
+		Stuart Building, Room SB {{ site.instructor.room }}<br/>
+		Illinois Institute of Technology<br/>
+		10 W 31st Street<br/>
+		Chicago, IL 60616<br/>
+		</p>
+        </ul>
+      </div>
+
+	        <div class="footer-col footer-col-2">
+		{%- include social.html -%}
+      </div>
+
+
+      <div class="footer-col footer-col-3">
+		<h2 class="footer-heading">TAs</h2>
+		{% for ta in site.tas %}
+        <ul class="contact-list">
+		  <li>{% if ta.webpage %}<a href="{{ ta.webpage }}">{{ ta.name }}</a>{% else %}{{ ta.name }}{% endif %}</li>
+		  {% if ta.office %}<li>Office: {{ ta.office }}</li>{% endif %}
+		  {% if ta.officehours %}<li>Office Hours: {{ ta.office }}</li>{% endif %}
+		  {% if ta.phone %}<li>Phone: {{ ta.phone }}</li>{% endif %}
+		  {% if ta.email %}<li>Email: <a class="u-email" href="mailto:{{ ta.email | encode_email }}">{{ ta.email | textify_email }}</a> </li>{% endif %}
+		</ul>
+		{% endfor %}
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+</footer>
