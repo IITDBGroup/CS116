@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+permalink: bootstrap.html
 ---
 
 ## First Steps

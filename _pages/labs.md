@@ -1,5 +1,6 @@
 ---
 title: Labs
+permalink: labs.html
 ---
 
 

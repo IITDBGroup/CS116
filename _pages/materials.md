@@ -1,5 +1,6 @@
 ---
 title: Course Materials
+permalink: materials.html
 ---
 
 # Notebooks
