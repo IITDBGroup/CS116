@@ -53,14 +53,17 @@ plugins:
 # default frontmatter
 defaults:
   - scope:
-      path: ""
+      path: "_pages"
     values:
       layout: "page"
-
+  - scope:
+      path: "notebooks"
+    values:
+      layout: "notebook"
 
 
 # include static pages
-include: ["notebooks"]
+include: [ "notebooks" ]
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
