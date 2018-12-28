@@ -26,6 +26,12 @@ instructor: {
   room: "206b",
   officehours: "Mondays, 12:00-1:00pm"
   }
+class: {
+  where: "IIT Tower 6D6-1",
+  when: "Mondays + Wednesdays, 1:50 pm - 2:40 pm",
+  labwhere: "TBA",
+  labwhen: "Fridays, 1:50 pm - 2:40 pm"
+  }
 tas:
   - name: TA1
     email: ta@iit.edu
@@ -62,8 +68,14 @@ defaults:
       layout: "notebook"
 
 
+# Collections
+collections:
+  labs:
+    output: true
+
+
 # include static pages
-include: [ "notebooks" ]
+include: [ "notebooks", "_pages" ]
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

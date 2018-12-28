@@ -1,0 +1,28 @@
+---
+title: Lectures
+permalink: lectures.html
+---
+
+<p>This is an overview of the content covered in the lectures:</p>
+
+{% assign numLectures = site.data.lectures | size | minus: 1 %}
+
+<table>
+<tr>
+    <th>Date</th>
+	<th>Topic</th>
+	<th>Description</th>
+	<th>Reading</th>
+</tr>
+{% for i in (0..numLectures) %}
+{% assign lecdate = site.data.dates[i] %}
+{% assign l = site.data.lectures[i] %}
+
+<tr>
+	<td>{{ lecdate }}</td>
+	<td><b>{{ l.title }}</b></td>
+	<td>{{ l.description }}</td>
+	<td>{{ l.reading }}</td>
+</tr>
+{% endfor %}
+</table>

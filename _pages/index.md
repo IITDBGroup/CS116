@@ -16,15 +16,15 @@ This course teaches you object-oriented programming using Java as our programmin
   * You need to learn how to use the shell
 	* many tasks are more effective to be done from a shell
 	* the
-  *
 * **Understand your language**
   * You need to understand the syntax of your language, its semantics, and its ecosystem
 * **Understand programming paradigms**
   * In this course we focus on **imperative** programming, specifically **object-orient programming**
 * **Know your algorithms**
-  *
 * **Code comprehension**
 * **Debugging and Testing**
+  * know how to use the java debugger and
+
 
 We briefly touch on all of these, but with a focus on the object-oriented programming paradigm and the Java language.
 

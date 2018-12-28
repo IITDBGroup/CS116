@@ -7,6 +7,26 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
+		<h2 class="footer-heading">Class</h2>
+        <ul class="contact-list">
+            {%- if site.class.where -%}
+             <li>where: {{ site.class.where }}</li>
+            {%- endif -%}
+			{%- if site.class.where -%}
+            <li>when: {{ site.class.when }}</li>
+            {%- endif -%}
+		</ul>
+		{% if site.class.labwhere or site.class.labwhen %}
+		<h2 class="footer-heading">Labs</h2>
+		<ul class="contact-list">
+            {%- if site.class.labewhere -%}
+             <li>where: {{ site.class.labwhere }}</li>
+             {%- endif -%}
+			 {%- if site.class.labewhen -%}
+             <li>when: {{ site.class.labwhen }}</li>
+             {%- endif -%}
+		</ul>
+		{% endif %}
 		<h2 class="footer-heading">Instructor</h2>
         <ul class="contact-list">
           <li class="p-name">
