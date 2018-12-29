@@ -1,8 +1,28 @@
-- title: Java Basics
+- title: "Java and OO Basics"
   reading: "textbook chapter 1"
-  notebooks:
+  notebooks: [ JavaBasics ]
   description:
 - title: Java Basics
   reading: "textbook chapter 1"
   notebooks:
   description:
+- title: Java Basics
+  reading: "textbook chapter 1"
+  notebooks:
+  description:
+- title: "Arrays and Collections"
+  reading: "textbook chapter 1"
+  notebooks: [ ArraysAndCollections ]
+  description: "We learn about arrays and collection data types in Java"
+- title: Java Basics
+  reading: "textbook chapter 1"
+  notebooks:
+  description:
+    - title: "Reflection, Annotations, and Generics"
+  reading: "textbook chapter 1"
+  notebooks: [ Reflection, Generics ]
+  description:
+- title: "Concurrent Programming"
+  reading: "textbook chapter 1"
+  notebooks: [ Threads ]
+  description: "We will explore the basics of concurrent programming in Java."

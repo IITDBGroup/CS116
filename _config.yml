@@ -55,6 +55,9 @@ plugins:
   - jekyll-feed
   - jekyll-jupyter-notebook
 
+# Syntax highlighting
+highlighter: rouge
+
 
 # default frontmatter
 defaults:

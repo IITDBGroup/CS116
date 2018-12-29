@@ -22,7 +22,21 @@ permalink: lectures.html
 	<td>{{ lecdate }}</td>
 	<td><b>{{ l.title }}</b></td>
 	<td>{{ l.description }}</td>
-	<td>{{ l.reading }}</td>
+	<td>
+	  {% if l.reading %}
+	  <b>Reading:</b> {{ l.reading }}
+	  {% endif %}
+	  {% if l.notebooks <> empty %}
+		<p>
+		  <b>Notebooks:<b>
+			  <ul>
+				{% for n in l.notebooks %}
+				<li><a href="{{ site.baseurl }}/notebooks/{{ n }}.ipynb.html">{{n}}</a></li>
+				{% endfor %}
+			  </ul>
+		</p>
+	  {% endif %}
+	</td>
 </tr>
 {% endfor %}
 </table>
