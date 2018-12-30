@@ -1,0 +1,7 @@
+- name: TA1
+  email: ta@iit.edu
+  home: "http://www.cs.iit.edu/~glavic/"
+  phone: 312 312 312
+  location: SB 205
+  officehours: Mondays, 10-11
+- name: TA2

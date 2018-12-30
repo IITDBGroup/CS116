@@ -1,11 +1,9 @@
 ---
-title: Course Materials
-permalink: materials.html
+title: Notebooks
+permalink: notebooks.html
 ---
 
-# Notebooks
-
-## The Java language
+# The Java language
 
 These notebooks teach you basic Java. Use them for self study and to recap what you have learned in class. The notebooks will also be used and updated during class.
 
@@ -15,7 +13,7 @@ These notebooks teach you basic Java. Use them for self study and to recap what 
 * [{{ nb.description }}]({{ site.baseurl }}/notebooks/{{ nb.filename }}.ipynb.html)
 {% endfor %}
 
-## Java build-in packages and popular third party packages
+# Java build-in packages and popular third party packages
 
 These notebooks teach you some important packages that are part of the core Java language or popular third-party packages.
 
@@ -24,3 +22,7 @@ These notebooks teach you some important packages that are part of the core Java
 {% for nb in libsnbs %}
 * [{{ nb.description }}]({{ site.baseurl }}/notebooks/{{ nb.filename }}.ipynb.html)
 {% endfor %}
+
+# Running the notebooks yourself
+
+I am using [http://beakerx.com/](http://beakerx.com/) for Java notebooks. The easiest way to run beaker is to use docker (see `startNotebook.sh` in the `notebooks` folder).

@@ -1,0 +1,45 @@
+<div itemscope itemtype="http://schema.org/Course">
+
+  	<h3>Course</h3>
+  {%- if course.where -%}
+
+  <div class="author__urls-wrapper">
+    <ul class="author__urls social-icons">
+        <li itemprop="time" itemscope itemtype="http://schema.org/Course">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">{{ course.where }}</span>
+        </li>
+	    <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Course">
+          <i class="fas fa-fw fa-clock" aria-hidden="true"></i> <span itemprop="name">{{ course.when }}</span>
+        </li>
+	</ul>
+  </div>
+  {%- endif -%}
+
+  {% if course.labwhere or course.labwhen %}
+		<h4>Labs</h4>
+
+  <div class="author__urls-wrapper">
+    <ul class="author__urls social-icons">
+        <li itemprop="time" itemscope itemtype="http://schema.org/Course">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">{{ course.labwhere }}</span>
+        </li>
+	    <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Course">
+          <i class="fas fa-fw fa-clock" aria-hidden="true"></i> <span itemprop="name">{{ course.labwhen }}</span>
+        </li>
+	</ul>
+  </div>
+
+  {% endif %}
+
+  {%- if course.syllabus -%}
+		<h4>Syllabus</h4>
+		<div class="author__urls-wrapper">
+		  <ul class="author__urls social-icons">
+			<li itemprop="homeLocation" itemscope itemtype="http://schema.org/Course">
+			  <a href="{{ site.syllabus | relative_url }}"><i class="far fa-file-pdf"></i> Syllabus</a>
+			</li>
+		 </ul>
+		</div>
+  {%- endif -%}
+
+ </div>

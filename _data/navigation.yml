@@ -1,0 +1,12 @@
+# main links
+main:
+  - title: "Home"
+    url: /notebooks.html
+  - title: "Getting Started"
+    url: /bootstrap.html
+  - title: "Labs"
+    url: /labs.html
+  - title: "Lectures"
+    url: /lectures.html
+  - title: "Notebooks"
+    url: /

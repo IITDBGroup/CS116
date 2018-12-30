@@ -1,0 +1,11 @@
+name: "Boris Glavic"
+home: "http://www.cs.iit.edu/~glavic/"
+#avatar: "/assets/images/bglavic.jpg"
+location: "Stuard Building, 206b"
+officehours: "Mondays, 12:00-1:00pm"
+phone: 312 567 5205
+email: bglavic@iit.edu
+links:
+  - label: "dbgroup"
+    icon: "fas fa-fw fa-link"
+    url: "http://cs.iit.edu/~dbgroup"

@@ -1,7 +1,7 @@
 ---
 title: Lab 1
 shortdescription: "Create a simple user-defined class"
-layout: page
+toc: true
 ---
 
 

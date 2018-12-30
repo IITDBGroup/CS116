@@ -14,43 +14,17 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: CS116
-course: CS116
-semester: spring
-year: 2019
-syllabus: assets/syllabus.pdf
-instructor: {
-  name: "Boris Glavic",
-  email: bglavic@iit.edu,
-  webpage: "http://www.cs.iit.edu/~glavic/",
-  phone: 312 567 5205,
-  room: "206b",
-  officehours: "Mondays, 12:00-1:00pm"
-  }
-class: {
-  where: "IIT Tower 6D6-1",
-  when: "Mondays + Wednesdays, 1:50 pm - 2:40 pm",
-  labwhere: "TBA",
-  labwhen: "Fridays, 1:50 pm - 2:40 pm"
-  }
-tas:
-  - name: TA1
-    email: ta@iit.edu
-    webpage: "http://www.cs.iit.edu/~glavic/"
-    phone: 312 312 312
-    office: SB 205
-    officehours: Mondays, 10-11
-  - name: TA2
 description: >- # this means to ignore newlines until "baseurl:"
   This is the webpage for CS116.
 baseurl: "/~cs116" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
-# github_username: IITDBGroup
-github_repos:  IITDBGroup/CS116
+url: "https://cs.iit.edu" # the base hostname & protocol for your site, e.g. http://example.com
+
+# footer
+#footer:
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
   - jekyll-jupyter-notebook
@@ -64,7 +38,10 @@ defaults:
   - scope:
       path: "_pages"
     values:
-      layout: "page"
+      layout: "single"
+      toc: true
+      sidebar: []
+      author_profile: true
   - scope:
       path: "notebooks"
     values:
