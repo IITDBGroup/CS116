@@ -1,6 +1,6 @@
 - title: "Java and OO Basics"
   reading: "textbook chapter 1"
-  notebooks: [ JavaBasics ]
+  notebooks: [ JavaBasics, PrimitiveDatatypes, ClassesAndObjects ]
   description:
 - title: Java Basics
   reading: "textbook chapter 1"

@@ -10,27 +10,31 @@
 - description: "Classes and Objects"
   filename: ClassesAndObjects
   type: java
-- description: "Interfaces and Abstract Classes"
+- description: "Interfaces, Abstract Classes, Nested Classes, and Anonymous Classes"
   filename: Interfaces
   type: java
 - description: "Arrays and Collections"
   filename: ArraysAndCollections
   type: java
-- description: Exceptions
+- description: "Exceptions"
   filename: Exceptions
   type: java
-- description: Recursion
+- description: "Recursion"
   filename: Recursion
   type: java
 - description: "Reflection and Annotations"
   filename: Reflection
   type: java
-- description: Generics
+- description: "Generics"
   filename: Generics
   type: java
 - description: "Documenting Code"
   filename: JavaDoc
   type: java
+- description: "Concurrent Programming and Threads"
+  filename: Threads
+  type: java
+
 
 - description: "I/O"
   filename: IO
@@ -38,9 +42,9 @@
 - description: "Regular Expressions"
   filename: RegEx
   type: libs
-- description: JUnit
+- description: "JUnit"
   filename: JUnit
   type: libs
-- description: Log4J
+- description: "Log4J"
   filename: Log4J
   type: libs
