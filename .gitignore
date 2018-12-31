@@ -3,3 +3,6 @@ _site
 .jekyll-metadata
 notebooks/.ipynb_checkpoints
 *.class
+java/bin
+java/doc
+java/.classpath

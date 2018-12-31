@@ -1,28 +1,36 @@
 - title: "Java and OO Basics"
   reading: "textbook chapter 1"
-  notebooks: [ JavaBasics, PrimitiveDatatypes, ClassesAndObjects ]
-  description:
-- title: Java Basics
+  notebooks: [ JavaBasics, ControlStructures, PrimitiveDatatypes, ClassesAndObjects ]
+  description: "We will cover what Java is (imperative, garbage-collected, object-oriented, VM-based, strictly typed) and cover basic concepts of the language such as variables, expressions, code blocks, control structures, and data types."
+- title: "Advanced OO Concepts and Collections"
   reading: "textbook chapter 1"
-  notebooks:
-  description:
-- title: Java Basics
+  notebooks: [ ArraysAndCollections, Interfaces ]
+  description: "We will learn about arrays and collection data structures and multiple inheritence (interfaces), abstract classes, nested classes, and anonymous classes"
+- title: "Exceptions and I/O"
   reading: "textbook chapter 1"
-  notebooks:
-  description:
-- title: "Arrays and Collections"
+  notebooks: [ Exceptions, IO ]
+  description: "We will learn about exception handling in Java and I/O operations"
+- title: "Debugging, Logging, and Testing"
   reading: "textbook chapter 1"
-  notebooks: [ ArraysAndCollections ]
-  description: "We learn about arrays and collection data types in Java"
-- title: Java Basics
+  notebooks: [ Log4J, JUnit ]
+  description: "We learn how to use a debugger to debug code, how to utilize logging for debugging, and how to write test code."
+- title: "Documentation"
   reading: "textbook chapter 1"
-  notebooks:
-  description:
-    - title: "Reflection, Annotations, and Generics"
+  notebooks: [ JavaDoc ]
+  description: "We will learn about how to comment our code and automatically create documentation from these comments."
+- title: "Recursion"
+  reading: "textbook chapter 1"
+  notebooks: [ Recursion ]
+  description: "We will learn about recursion."
+- title: "Reflection, Annotations, and Generics"
   reading: "textbook chapter 1"
   notebooks: [ Reflection, Generics ]
-  description:
+  description: "We will learn how to use reflection to inspect and manipulate objects of possibly unknown classes at runtime. Furthermore, we will see how to use generics to build generic implementations without sacrifizing type safety."
+- title: "Lambdas and the Stream API"
+  reading: "textbook chapter 1"
+  notebooks: [ Lambdas ]
+  description: "We will explore the basics of threads and concurrent programming in Java."
 - title: "Concurrent Programming"
   reading: "textbook chapter 1"
   notebooks: [ Threads ]
-  description: "We will explore the basics of concurrent programming in Java."
+  description: "We will explore the basics of threads and concurrent programming in Java."

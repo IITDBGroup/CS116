@@ -9,6 +9,9 @@ permalink: bootstrap.html
 
 You can get **OpenJDK** from [https://jdk.java.net/11/](https://jdk.java.net/11/). Nowaways there are only tiny difference between **OpenJDK** and **Oracle JDK** so which one you install should not matter for the most part.
 
+> Make sure that you install a relatively recent Java version (9 or newer) since some features we discuss are not available in older Java versions.
+{: .notice--danger}
+
 ### Learn how to use Java's toolchain
 
 The Java Development Toolkit (JDK) contains several binaries that are used to run compiled Java bytecode, to compile code, to create `jar` archives, a shell for interpreted execution, and several others. The first step when using Java will be to familiarize yourself with the use of these binaries. The most important ones for are now are `javac` the compiler that generates `.class` files storing java byte code and `java` that starts a Java Virtual Machine to execute code. Below is a very basic example:
@@ -23,6 +26,13 @@ javac [-cp <class_path>] [-d <binary_dir>] <source_files>
 
 Here `<source_files>` is a list of `.java` files you want to compile, `<class_path>` is a list (elements are separated by `:`) of directories and jar files that contain user-defined classes that are used by the sources files you want to compile, and `<binary_dir>` is the directory where the generated class files will be stored.
 
+> If searching for a class, Java will search within subdirectories corresponding to the package of the class within each directory listed in the class path and within all `jar` files listed in the classpath. For example, if you the classpath is `mylib:myotherlib/subdir` and we are searching for a class `mypackage.MyClass` then Java will check for this class in `mylib/mypackage/` and `myotherlib/subdir/mypackage`.
+{: .notice--danger}
+
+> Note that jar files have to be listed individually. It is **not** possible to include all jar files in a directory by adding this directory to the classpath!
+{: .notice--warning}
+
+
 The `java` command is used to start a JVM and execute code. It is called like this:
 
 ~~~shell
@@ -33,8 +43,11 @@ Here `<class_path>` is a class path as above and `<class_name>` is the fully qua
 
 If the class we want to execute is stored in a jar file, then you can either add the jar file to the class path or use the `-jar` option. Any parameters passed after `<class_name>` will be passed as a `String[]` to the `main` method.
 
-Since Java versions 9
+Since Java versions 9, Java also comes with an interactive shell called `jshell`. To start `jshell`:
 
+~~~shell
+jshell
+~~~
 
 ### Learn how to use an IDE and/or Programmers Texteditor
 

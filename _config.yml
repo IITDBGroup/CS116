@@ -22,15 +22,36 @@ url: "https://cs.iit.edu" # the base hostname & protocol for your site, e.g. htt
 # footer
 #footer:
 
-# Build settings
-markdown: kramdown
+# Theme
 theme: minimal-mistakes-jekyll
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-jupyter-notebook
 
+# Conversion
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
 # Syntax highlighting
 highlighter: rouge
+
+# Markdown
+markdown: kramdown
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
 
 
 # default frontmatter
@@ -40,13 +61,20 @@ defaults:
     values:
       layout: "single"
       toc: true
+      toc_sticky: true
       sidebar: []
       author_profile: true
   - scope:
       path: "notebooks"
     values:
       layout: "notebook"
-
+  - scope:
+      path: ""
+      type: "labs"
+    values:
+      layout: "single"
+      toc: false
+      classes: wide
 
 # Collections
 collections:
