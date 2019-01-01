@@ -106,3 +106,4 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - asciinema
+  - docker
