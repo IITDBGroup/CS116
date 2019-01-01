@@ -13,6 +13,9 @@
 - description: "Interfaces, Abstract Classes, Nested Classes, and Anonymous Classes"
   filename: Interfaces
   type: java
+- description: "Enumeration Types"
+  filename: Enums
+  type: java
 - description: "Arrays and Collections"
   filename: ArraysAndCollections
   type: java
@@ -34,7 +37,8 @@
 - description: "Concurrent Programming and Threads"
   filename: Threads
   type: java
-
+- description: "Lambdas and Streams"
+  filename: Lambdas
 
 - description: "I/O"
   filename: IO

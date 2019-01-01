@@ -1,7 +1,6 @@
 ---
 layout: single
 permalink: index.html
-dates: [ 01/14, 01/18 ]
 author_profile: true
 ---
 
@@ -10,46 +9,40 @@ author_profile: true
 This course teaches you object-oriented programming using Java as our programming language of choice.
 
 * **Getting started**: install Java and familize yourself with tools: [here]({{ site.baseurl }}/bootstrap.html)
-* **Labs**: additional information about labs: [here]({{ site.baseurl }}/labs.html)
+* **Labs**: information about lab assignments: [here]({{ site.baseurl }}/labs.html)
 * **Lecture**: overview of content covered in the lectures: [here]({{ site.baseurl }}/lectures.html)
-
-
-<!-- Being a skillful programmer requires many skills including: -->
-
-<!-- * **Know your tools** -->
-<!--   * You should learn how to use IDEs and/or programming text editors -->
-<!-- 	  * learn its keyboard shortcuts! -->
-<!--   * You need to learn how to use a version control system like **git** -->
-<!-- 	  * these keep track of versions of your source code and allow you to collaborate with others -->
-<!--   * You need to learn how to use the shell -->
-<!-- 	* many tasks are more effective to be done from a shell -->
-<!-- 	* over remote connections this maybe the only access you have to a machine -->
-<!-- * **Understand your language** -->
-<!--   * You need to understand the syntax of your language, its semantics, and its ecosystem -->
-<!-- * **Understand programming paradigms** -->
-<!--   * In this course we focus on **imperative** programming, specifically **object-orient programming** -->
-<!-- * **Know your algorithms** -->
-<!--   *  algorithms -->
-<!-- * **Code comprehension** -->
-<!--   * -->
-<!-- * **Debugging and Testing** -->
-<!--   * know how to use the Java debugger and -->
-
-<!-- We briefly touch on all of these, but with a focus on the object-oriented programming paradigm and the Java language. -->
+* **Project**: information about the project: [here]({{ site.baseurl }}/project.html)
 
 # Textbook
 
-Java
+>*Julie Anderson* and *Hervé J. Franceschi*, **Java Illuminated**, Jones & Bartlett Learning,  **ISBN-13:** 978-1284140996
+{: .notice--warning}
+
+A good, but more advanced book is *Effective Java* from Joshua Bloch who implemented parts of Java including the Collections API:
+
+>*Joshua Bloch*, **Effective Java**, Addison Wesley,  **ISBN-13:** 978-0134685991
+{: .notice--info}
 
 # Workload and Grading Scheme
 
-* Labs (30%) - there are 10 [labs]({{ site.baseurl }}/labs.html)
-* Midterm Exams (20%)
-* Final Exam (30%)
+**Point distribution:**
 
-Grading scheme:
+* Lab assignemnts (30%) - there are 10 [lab assignments]({{ site.baseurl }}/labs.html)
+* Project (10%) - you have to complete a [project]({{ site.baseurl }}/project.html)
+* Midterm Exams (25%) - see [here]({{ site.baseurl }}/exams.html#midterm-exam)
+* Final Exam (35%) - see [here]({{ site.baseurl }}/exams.html#final-exam)
+
+**Grading scheme:**
 
 * 90+ = A
 * 80+ = B
-*
-*
+* 79+ = C
+* 60+ = D
+* < 60 = E
+
+> Note that you have to pass the final exam with at least a D, otherwise you will receive an E for the whole course
+{: .notice--danger}
+
+# Syllabus
+
+<a href="{{ site.syllabus | relative_url }}"><i class="far fa-file-pdf"></i> Syllabus</a>

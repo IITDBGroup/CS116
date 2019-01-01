@@ -52,7 +52,11 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-
+# Compressing generated html
+#compress_html:
+#  clippings: all
+#  ignore:
+#    envs: development
 
 # default frontmatter
 defaults:

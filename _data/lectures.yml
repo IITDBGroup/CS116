@@ -4,12 +4,12 @@
   description: "We will cover what Java is (imperative, garbage-collected, object-oriented, VM-based, strictly typed) and cover basic concepts of the language such as variables, expressions, code blocks, control structures, and data types."
 - title: "Advanced OO Concepts and Collections"
   reading: "textbook chapter 1"
-  notebooks: [ ArraysAndCollections, Interfaces ]
-  description: "We will learn about arrays and collection data structures and multiple inheritence (interfaces), abstract classes, nested classes, and anonymous classes"
+  notebooks: [ ArraysAndCollections, Interfaces, Enums ]
+  description: "We will learn about arrays and collection data structures and multiple inheritence (interfaces), abstract classes, nested classes, anonymous classes, and enumeration types."
 - title: "Exceptions and I/O"
   reading: "textbook chapter 1"
   notebooks: [ Exceptions, IO ]
-  description: "We will learn about exception handling in Java and I/O operations"
+  description: "We will learn about exception handling in Java and I/O operations."
 - title: "Debugging, Logging, and Testing"
   reading: "textbook chapter 1"
   notebooks: [ Log4J, JUnit ]

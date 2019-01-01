@@ -6,6 +6,10 @@ main:
     url: /bootstrap.html
   - title: "Labs"
     url: /labs.html
+  - title: "Project"
+    url: /project.html
+  - title: "Exams"
+    url: /exams.html
   - title: "Lectures"
     url: /lectures.html
   - title: "Notebooks"

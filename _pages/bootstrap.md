@@ -53,13 +53,13 @@ jshell
 
 Using the right tools will greatly enhance your programming experience. You want to setup a and learn how to use a good Java IDE and/or programmers text editor. Also see [here](https://xkcd.com/378/). Following is a (highly biased) selection of IDEs and Editors you may want to check out:
 
-#### IDEs
+#### IDEs ####
 
 * **Eclipse**: One of the best Java IDEs (also support for many other languages can be added): [https://www.eclipse.org/downloads/](https://www.eclipse.org/downloads/)
 * **NetBeans**: Has been open sourced, but not all functionality available for newer Java versions yet. Otherwise, a great IDE: [https://netbeans.org/](https://netbeans.org/)
 * Or if you prefer cloud IDEs **CodeEnvy**: [https://codenvy.io/](https://codenvy.io/)
 
-#### Editors
+#### Editors ####
 
 * **Emacs**: slow learning curve, but extremly powerful and extensible if you do not mind the odd keyboard shortcuts: [https://www.gnu.org/software/emacs/](https://www.gnu.org/software/emacs/)
 * **Vi**: very fast, low resource consumption, extremly powerful and extensible: [https://www.vim.org/](https://www.vim.org/)
@@ -73,10 +73,14 @@ Using the right tools will greatly enhance your programming experience. You want
 
 {% asciicast 219089 %}
 
-You can use git either from the commandline, through IDE or editor plugins, or
+You can use git either from the commandline, through IDE or editor plugins, or using a standalone GUI.
 
+* **Installing git**: [https://git-scm.com/](https://git-scm.com/)
+* **Git Tutorials and Implementation**: [official git documentation](https://git-scm.com/doc), [gitmagic](http://www-cs-students.stanford.edu/~blynn/gitmagic/book.pdf), [Pro Git](https://git-scm.com/book)
+* **IDE/Editor Support**: for example, Eclispe supports git as a version management system, for Emacs you can use [magit](https://magit.vc/)
+* **Standalong GUIs**: [Sourcetree](https://www.sourcetreeapp.com/) is a good one. The official git webpage has a quite extensive list: [https://git-scm.com/downloads/guis](https://git-scm.com/downloads/guis)
 
-### Use the excellent Java documentation
+### Use the excellent Java documentation ###
 
 Java provides quite a lot of functionality out of the box. It is easy to get overwhelmed. Finding out what classes exist and what interface they provide is easy using Java's online documentation: [https://docs.oracle.com/en/java/javase/11/docs/api/java.base/module-summary.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/module-summary.html)
 

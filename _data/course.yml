@@ -4,6 +4,16 @@ year: 2019
 syllabus: assets/syllabus.pdf
 where: "IIT Tower 6D6-1"
 when: "Mon + Wed, 1:50 pm - 2:40 pm"
-labwhere: "TBA"
-labwhen: "Fri, 1:50 pm - 2:40 pm"
+lab:
+  where: "TBA"
+  when: "Fri, 1:50 pm - 2:40 pm"
 github_repos:  IITDBGroup/CS116
+midterm:
+  when: TBA
+  where: TBA
+final:
+  when: TBA
+  where: TBA
+due:
+  project_design: 04/15
+  project_implementation: 05/01

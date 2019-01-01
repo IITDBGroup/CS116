@@ -15,19 +15,51 @@
   </div>
   {%- endif -%}
 
-  {% if course.labwhere or course.labwhen %}
+  {% if course.lab  %}
 		<h4>Labs</h4>
 
   <div class="author__urls-wrapper">
     <ul class="author__urls social-icons">
         <li itemprop="time" itemscope itemtype="http://schema.org/Course">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">{{ course.labwhere }}</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">{{ course.lab.where }}</span>
         </li>
 	    <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Course">
-          <i class="fas fa-fw fa-clock" aria-hidden="true"></i> <span itemprop="name">{{ course.labwhen }}</span>
+          <i class="fas fa-fw fa-clock" aria-hidden="true"></i> <span itemprop="name">{{ course.lab.when }}</span>
         </li>
 	</ul>
   </div>
+
+  {% endif %}
+
+  {% if course.midterm %}
+		<h4>Midterm Exam</h4>
+  <div class="author__urls-wrapper">
+    <ul class="author__urls social-icons">
+        <li itemprop="time" itemscope itemtype="http://schema.org/Course">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">{{ course.midterm.where }}</span>
+        </li>
+	    <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Course">
+          <i class="fas fa-fw fa-clock" aria-hidden="true"></i> <span itemprop="name">{{ course.midterm.when }}</span>
+        </li>
+	</ul>
+  </div>
+
+  {% endif %}
+
+  {% if course.final %}
+
+  		<h4>Final Exam</h4>
+    <div class="author__urls-wrapper">
+    <ul class="author__urls social-icons">
+        <li itemprop="time" itemscope itemtype="http://schema.org/Course">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">{{ course.final.where }}</span>
+        </li>
+	    <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Course">
+          <i class="fas fa-fw fa-clock" aria-hidden="true"></i> <span itemprop="name">{{ course.final.when }}</span>
+        </li>
+	</ul>
+  </div>
+
 
   {% endif %}
 
