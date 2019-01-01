@@ -28,7 +28,7 @@ toc: false
 	  {% if l.reading %}
 	  <b>Reading:</b> {{ l.reading }}
 	  {% endif %}
-	  {% if l.notebooks <> empty %}
+	  {% if l.notebooks and l.notebooks <> empty %}
 		<p>
 		  <b>Notebooks:<b>
 			  <ul>

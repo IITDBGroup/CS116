@@ -13,6 +13,17 @@ These notebooks teach you basic Java. Use them for self study and to recap what 
 * [{{ nb.description }}]({{ site.baseurl }}/notebooks/{{ nb.filename }}.ipynb.html)
 {% endfor %}
 
+# Algorithms
+
+These notebooks teach you basic algorithms.
+
+{% assign algnbs = site.data.notebooks | where: "type", "algorithms" %}
+
+{% for nb in algnbs %}
+* [{{ nb.description }}]({{ site.baseurl }}/notebooks/{{ nb.filename }}.ipynb.html)
+{% endfor %}
+
+
 # Java build-in packages and popular third party packages
 
 These notebooks teach you some important packages that are part of the core Java language or popular third-party packages.

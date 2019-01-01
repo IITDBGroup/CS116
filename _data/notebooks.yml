@@ -39,6 +39,11 @@
   type: java
 - description: "Lambdas and Streams"
   filename: Lambdas
+  type: java
+
+- description: "Algorithms for Searching and Sorting"
+  filename: SearchAndSort
+  type: algorithms
 
 - description: "I/O"
   filename: IO
@@ -49,6 +54,6 @@
 - description: "JUnit"
   filename: JUnit
   type: libs
-- description: "Log4J"
-  filename: Log4J
+- description: "Logging"
+  filename: Logging
   type: libs
