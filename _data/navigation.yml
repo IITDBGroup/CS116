@@ -14,3 +14,5 @@ main:
     url: /lectures.html
   - title: "Notebooks"
     url: /notebooks.html
+  - title: "Piazza"
+    url: "https://piazza.com/iit/spring2019/cs116/home"

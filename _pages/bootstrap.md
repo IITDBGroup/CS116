@@ -69,7 +69,7 @@ Using the right tools will greatly enhance your programming experience. You want
 
 ### Learn how to use git ###
 
-`git` is a version control system which allows you to store multiple versions of your code in a repository on your local disc. Such repositories can be syncronized with hosted copies of a repository. We will make use of two hosting services: [BitBucket](www.bitbucket.org) for labs and [GitHub](www.github.com) for all other course content. The screencast below shows how to clone the CS116 repository.
+`git` is a version control system which allows you to store multiple versions of your code in a repository on your local disc. Such repositories can be syncronized with hosted copies of a repository. We will make use of two hosting services: [BitBucket](http://www.bitbucket.org) for labs and [GitHub](www.github.com) for all other course content. The screencast below shows how to clone the CS116 repository.
 
 {% asciicast 219089 %}
 

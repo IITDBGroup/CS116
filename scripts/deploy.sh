@@ -1,9 +1,9 @@
 RSYNC=rsync
 RSYNC_OPTS=-rv
 SERVER=gauss.cs.iit.edu
-USER=cs116
+USER=glavic
 CURL=curl
-SERVER_DIR=/home/cs116/public_html/
+SERVER_DIR=/home/glavic/public_html/cs116/
 SERVER_FULL=${USER}@${SERVER}:${SERVER_DIR}
 SCRIPTDIR=$(dirname "${BASH_SOURCE}")
 DEPLOYDIR="${SCRIPTDIR}/../_site/"
