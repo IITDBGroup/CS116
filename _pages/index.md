@@ -45,4 +45,4 @@ A good, but more advanced book is *Effective Java* from Joshua Bloch who impleme
 
 # Syllabus
 
-<a href="{{ site.syllabus | relative_url }}"><i class="far fa-file-pdf"></i> Syllabus</a>
+<a href="{{ site.data.course.syllabus  }}"><i class="far fa-file-pdf"></i> Syllabus</a>
