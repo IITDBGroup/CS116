@@ -91,6 +91,16 @@
         ]
       });
 
+	  // h brings us back to the lectures
+	  Reveal.addKeyBinding( { keyCode: 72, key: 'H', description: 'Go to lectures page' }, function() {
+		  window.location.href = '{{ site.baseurl }}/lectures.html';
+	  });
+
+	  // p shows a print view
+	  Reveal.addKeyBinding( { keyCode: 80, key: 'P', description: 'Print view' }, function() {
+		  window.location.href = '{{ site.baseurl }}/{{ page.url }}?print-pdf';
+	  });
+
     </script>
 
   </body>

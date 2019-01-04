@@ -65,16 +65,6 @@ title: "Documenting Java Code"
   </textarea>
 </section>
 
-<section data-markdown>
-  <textarea data-template>
-	## Real Java Class Library Example
-
-	* To see what documentation generated with JavaDoc looks like let's have a look at the documentation of the `java.lang.String` class:
-	  * [javadoc](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-	* Let's also have a look at the source code from which this was generated:
-	  * [String.java](http://hg.openjdk.java.net/jdk10/master/file/be620a591379/src/java.base/share/classes/java/lang/String.java)
-  </textarea>
-</section>
 
 
 <section data-markdown>
@@ -121,5 +111,24 @@ title: "Documenting Java Code"
 	javadoc -d doc --source-path src lecture
 	```
 	* `-d` is the output directory, `--source-path` specifies a folder to search for `.java` files and `lecture` is the package for which documentation should be generated
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Examples
+	* Let's have a look at the documentation created for our example classes
+	* [/java/doc/index.html]({{ site.baseurl }}/java/doc/index.html)
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Real Java Class Library Example
+
+	* To see what documentation generated with JavaDoc looks like let's have a look at the documentation of the `java.lang.String` class:
+	  * [javadoc](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+	* Let's also have a look at the source code from which this was generated:
+	  * [String.java](http://hg.openjdk.java.net/jdk10/master/file/be620a591379/src/java.base/share/classes/java/lang/String.java)
   </textarea>
 </section>
