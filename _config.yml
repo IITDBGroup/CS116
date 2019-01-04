@@ -30,6 +30,8 @@ plugins:
   - jekyll-feed
   - jekyll-jupyter-notebook
 
+# Scripts
+
 # Conversion
 lsi: false
 excerpt_separator: "\n\n"
@@ -79,12 +81,20 @@ defaults:
       layout: "single"
       toc: false
       classes: wide
+  - scope:
+      path: ""
+      type: "lectures"
+    values:
+      layout: "reveal_slide"
+      toc: false
+      classes: wide
 
 # Collections
 collections:
   labs:
     output: true
-
+  lectures:
+    output: true
 
 # include static pages
 include: [ "notebooks", "_pages" ]

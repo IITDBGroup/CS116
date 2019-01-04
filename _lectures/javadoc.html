@@ -1,0 +1,125 @@
+---
+shortname: javadoc
+title: "Documenting Java Code"
+---
+
+<section data-markdown>
+	<textarea data-template>
+		# CS116 - {{ page.title }}
+
+		**Lecturer**: [Boris Glavic]({{ site.data.instructor.home }})
+
+		**Semester**: Spring 2019
+	</textarea>
+</section>
+
+<section data-markdown>
+	<textarea data-template>
+		## Importance of Documentation
+
+		* *I know what I am doing, so why document my code?*
+		  * yes, but what if you have to look at your code in 2 months?
+		  * yes, but what if somebody else is supposed to extend or comprehend your code?
+	</textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Documentation in Java
+
+	* We already saw how to use comments in Java
+	~~~java
+	// This class does the following.
+	public class X {
+
+	    private int size; // stores size of the object
+
+	    /* Default constructor that initializes fields
+	      to their default values */
+	    public X () {
+	       ...
+	    }
+	}
+	~~~
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## What is JavaDoc?
+
+	* Java supports a non-invasive way of including more structured documentation in comments
+	* The JavaDoc tool can then be used to generate documentation in various forms from this comments
+	* Many IDEs support viewing and generating javadoc documentation
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## JavaDoc syntax
+
+	* A Javadoc comments if a multi-line comment that starts with `/**` (there is a single `*` after the opening comment)
+	* A Javadoc comment is always associated with a code element, e.g., a method, class, or field
+    * Depending on the type of element that is documents javadoc expects special elements called **tags8* which are prefixed with `@`
+
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Real Java Class Library Example
+
+	* To see what documentation generated with JavaDoc looks like let's have a look at the documentation of the `java.lang.String` class:
+	  * [javadoc](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+	* Let's also have a look at the source code from which this was generated:
+	  * [String.java](http://hg.openjdk.java.net/jdk10/master/file/be620a591379/src/java.base/share/classes/java/lang/String.java)
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Example
+
+```java
+	/** This is a Javadoc comment for a method.
+	 * Only the first sentence will be included in the overview.
+	* It is customary to start lines with "*".
+	* A javadoc comment can also contain html code
+	* such as <b>this will be bold</b>
+	* Elements starting with @ are elements that special
+	/*
+```
+
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Documenting methods
+	* The first sentence is a short description of the method
+	* Use `@parameter <name> <description>` to document a method parameter
+	* Use `@return <description>` to document the return value of the method
+	* Use `@throws <classname> <description>` do document exceptions that method may throw
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Documenting classes
+	* The first sentence is a short description
+	* Use `@author` to document who created the class
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Generating Documentation
+	* The `javadoc` tool is used to generate documentation from javadoc comments in your code
+	* You can find the full documentation [here](https://docs.oracle.com/en/java/javase/11/javadoc/javadoc.html#GUID-7A344353-3BBF-45C4-8B28-15025DDCC643)
+	```shell
+	javadoc -d doc --source-path src lecture
+	```
+	* `-d` is the output directory, `--source-path` specifies a folder to search for `.java` files and `lecture` is the package for which documentation should be generated
+  </textarea>
+</section>

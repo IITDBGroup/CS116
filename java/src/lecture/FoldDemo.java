@@ -19,7 +19,7 @@ public class FoldDemo {
 	 * 
 	 * @author lord_pretzel
 	 *
-	 * @param <T>
+	 * @param <T> The argument and output type of the operator
 	 */
     interface BinaryOp<T> {
     	

@@ -82,7 +82,7 @@ You can use git either from the commandline, through IDE or editor plugins, or u
 
 ### Use the excellent Java documentation ###
 
-Java provides quite a lot of functionality out of the box. It is easy to get overwhelmed. Finding out what classes exist and what interface they provide is easy using Java's online documentation: [https://docs.oracle.com/en/java/javase/11/docs/api/java.base/module-summary.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/module-summary.html)
+Java provides quite a lot of functionality out of the box. It is easy to get overwhelmed. Finding out what classes exist and what interface they provide is easy using Java's online javadoc documentation: [https://docs.oracle.com/en/java/javase/11/docs/api/java.base/module-summary.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/module-summary.html). The main documentation is here: [https://docs.oracle.com/en/java/javase/11/](https://docs.oracle.com/en/java/javase/11/).
 
 
 ## Next Steps

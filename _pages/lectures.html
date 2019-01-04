@@ -23,7 +23,17 @@ toc: false
 <tr>
 	<td>{{ lecdate }}</td>
 	<td><b>{{ l.title }}</b></td>
-	<td>{{ l.description }}</td>
+	<td>{{ l.description }}
+	  {% if l.slides %}
+	  <b>Slides:</b>
+	  <ul>
+	  {% for s in l.slides %}
+	  {% assign slide = site.lectures | where: "shortname", s | first %}
+	  <li><a href="{{ site.baseurl }}/{{ slide.url }}">{{ slide.title }}</a></li>
+	  {% endfor %}
+	  </ul>
+	  {% endif %}
+	</td>
 	<td>
 	  {% if l.reading %}
 	  <b>Reading:</b> {{ l.reading }}
