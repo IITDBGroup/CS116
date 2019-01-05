@@ -42,6 +42,8 @@ GEM
       jekyll (>= 2.0)
     jekyll-data (1.0.0)
       jekyll (~> 3.3)
+    jekyll-diagrams (0.4.2)
+      jekyll (~> 3.6)
     jekyll-feed (0.11.0)
       jekyll (~> 3.3)
     jekyll-gist (1.5.0)
@@ -117,6 +119,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 3.8.5)
   jekyll-asciinema
+  jekyll-diagrams
   jekyll-feed (~> 0.6)
   jekyll-jupyter-notebook
   minima (~> 2.0)

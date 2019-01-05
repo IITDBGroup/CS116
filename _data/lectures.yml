@@ -1,50 +1,71 @@
 - title: "Java and OO Basics"
   reading: "Textbook chapters 1, 2, 3, 5, 6, 7, and 10"
   notebooks: [ JavaBasics, ControlStructures, PrimitiveDatatypes, ClassesAndObjects ]
-  slides: [ logistics, java ]
+  slides: [ logistics, java, tools ]
   description: "We will cover what Java is (imperative, garbage-collected, object-oriented, VM-based, strictly typed) and cover basic concepts of the language such as variables, expressions, code blocks, control structures, and data types."
+  numdates: 4
 
 - title: "Advanced OO Concepts, Data structures, and Collections"
   reading: "Textbook chapter 8, 9, and 14"
   notebooks: [ ArraysAndCollections, Interfaces, Enums ]
   description: "We will learn about arrays and collection data structures and multiple inheritence (interfaces), abstract classes, nested classes, anonymous classes, and enumeration types."
+  slides: [ datastructures ]
+  numdates: 3
 
 - title: "Exceptions and I/O"
   reading: "Textbook chapter 11"
   notebooks: [ Exceptions, IO ]
   description: "We will learn about exception handling in Java and I/O operations."
+  numdates: 3
 
 - title: "Debugging, Logging, and Testing"
   notebooks: [ Logging, JUnit ]
   description: "We learn how to use a debugger to debug code, how to utilize logging for debugging, and how to write test code."
+  slides: [ debug ]
+  numdates: 2
 
 - title: "Documentation"
   reading: "Textbook Chapter 7.16"
   notebooks: [ JavaDoc ]
   slides: [ javadoc ]
   description: "We will learn about how to comment our code and automatically create documentation from these comments."
+  numdates: 1
 
 - title: "Introduction to Algorithms: Searching and Sorting"
   notebooks: [ SearchAndSort ]
+  slides: [ search_and_sort ]
   description: "We will learn about algorithms using searching and sorting as an exampl"
+  numdates: 3
 
 - title: "Computational Complexity"
   reading: "Textbook Chapter 15"
+  slides: [ complexity ]
   description: "We will learn how to analyze the runtime complexity of an algorithm."
+  numdates: 2
 
 - title: "Recursion"
   reading: "Textbook chapter 13"
   notebooks: [ Recursion ]
   description: "We will learn about recursion."
+  numdates: 2
 
 - title: "Reflection, Annotations, and Generics"
   notebooks: [ Reflection, Generics ]
   description: "We will learn how to use reflection to inspect and manipulate objects of possibly unknown classes at runtime. Furthermore, we will see how to use generics to build generic implementations without sacrifizing type safety."
+  numdates: 2
 
 - title: "Lambdas and the Stream API"
   notebooks: [ Lambdas ]
   description: "We will explore the basics of threads and concurrent programming in Java."
+  numdates: 2
 
 - title: "Concurrent Programming"
   notebooks: [ Threads ]
+  slides: [ threads ]
   description: "We will explore the basics of threads and concurrent programming in Java."
+  numdates: 2
+
+- title: "Potpourri"
+  slides: [ potpourri ]
+  description: "We will explore several advanced and tangential topics such as DevOps, Build tools, Virtualization, ClassLoaders, and so on."
+  numdates: 2

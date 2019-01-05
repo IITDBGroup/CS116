@@ -140,7 +140,7 @@ public class TowersOfHanoi {
 	 */
 	public void solve() {
 		System.out.println("initial configuration:\n\n" + toString());
-		move(0, 2, numDiscs);
+		move(0, 2, 1, numDiscs);
 	}
 
 	/**
@@ -148,17 +148,17 @@ public class TowersOfHanoi {
 	 * 
 	 * @param from takes discs from this stake
 	 * @param to move discs to this stake
+	 * @param buf use this stake as a buffer for the move
 	 * @param n number of discs to move
 	 */
-	public void move(int from, int to, int n) {
+	public void move(int from, int to, int buf, int n) {
 		System.out.printf("solve moving %d discs from %d to %d\n", n, from, to);
-		int buf = getBuffer(from,to);
 		if (n > 1) {
-			move(from, buf, n-1);
+			move(from, buf, to, n-1);
 		}
 		moveSingleDisc(from, to);
 		if (n > 1) {
-			move(buf, to, n-1);
+			move(buf, to, from, n-1);
 		}
 	}
 
@@ -172,27 +172,6 @@ public class TowersOfHanoi {
 		int disc = stacks.get(from).pop();
 		stacks.get(to).push(disc);        
 		System.out.printf("move disc %d from %d to %d:\n\n%s\n", disc, from, to, toString());
-	}
-
-	/**
-	 * Determines which stake to use as a buffer when moving elements from stake <tt>from</tt> to stake <tt>to</tt> 
-	 * @param from we are moving discs from this stake
-	 * @param to we are moving discs to this stake
-	 * @return the stake to use as buffer
-	 */
-	private int getBuffer(int from, int to) {
-		if (from == 0 && to == 2)
-			return 1;
-		if (from == 0 && to == 1)
-			return 2;
-		if (from == 1 && to == 0)
-			return 2;
-		if (from == 1 && to == 2)
-			return 0;
-		if (from == 2 && to == 0)
-			return 1;
-		else // (from == 2 && to == 1)
-			return 0;
 	}
 
 	/**

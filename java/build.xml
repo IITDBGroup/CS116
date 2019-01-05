@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Jan 5, 2019 1:40:33 PM                                                        
+
+     CS116    
+     description builds all the classes for CS116
+                   
+     lord_pretzel                                                                
+     ====================================================================== -->
+<project 
+	name="CS116" 
+	default="fullbuild"
+	basedir=".">
+    <description>
+            description builds all the classes for CS116
+    </description>
+
+    <!-- ================================= 
+          variables and locations              
+         ================================= -->
+	<property name="dir.src" value="${basedir}/src" />
+	<property name="dir.bin" value="${basedir}/bin" />
+	<property name="dir.doc" value="${basedir}/doc" />
+
+    <!-- ================================= 
+          classpath   
+         ================================= -->
+
+	
+    <!-- ================================= 
+          target: fullbuild              
+         ================================= -->
+    <target name="fullbuild" depends="javadoc" description="builds all the classes and documentation for CS116">
+        
+    </target>
+	
+    <!-- ================================= 
+          target: createDirs              
+         ================================= -->
+    <target name="createDirs">
+		<mkdir dir="${dir.bin}"/>
+		<mkdir dir="${dir.doc}"/>
+	</target>
+	
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: compile                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="compile" depends="createDirs">
+		<javac srcdir="${dir.src}" 
+				destdir="${dir.bin}" 
+				classpathref="${classpath}" 
+				debug="on" 
+				>
+		</javac>
+    </target>
+
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: javadoc                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="javadoc" depends="compile">
+		<javadoc
+			sourcepath="${dir.src}"
+			destdir="${dir.doc}">
+		</javadoc>
+    </target>
+
+	
+</project>

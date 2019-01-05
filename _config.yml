@@ -29,6 +29,7 @@ theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
   - jekyll-jupyter-notebook
+  - jekyll-diagrams
 
 # Scripts
 
@@ -98,6 +99,21 @@ collections:
 
 # include static pages
 include: [ "notebooks", "_pages" ]
+
+################################################################################
+# PLUGIN CONFIG
+
+# Mermaid graphs
+mermaid:
+  src: 'assets/js/mermaid.js'
+
+# Diagrams
+diagrams:
+  graphviz:
+    engine: dot
+    options: '-Tsvg'
+  diag:
+    options: '-Tsvg --nodoctype'
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

@@ -9,8 +9,8 @@ lab:
   when: "Fri, 1:50 pm - 2:40 pm"
 github_repos:  IITDBGroup/CS116
 midterm:
-  when: TBA
-  where: TBA
+  when: 03/04
+  where: "IIT Tower 6D6-1"
 final:
   when: TBA
   where: TBA

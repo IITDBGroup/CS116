@@ -16,20 +16,27 @@ toc: false
 	<th>Description</th>
 	<th>Reading</th>
 </tr>
+{% assign datepos = 0 %}
 {% for i in (0..numLectures) %}
-{% assign lecdate = site.data.dates[i] %}
 {% assign l = site.data.lectures[i] %}
-
-<tr>
-	<td>{{ lecdate }}</td>
+{% assign numdates = l.numdates | default: 1 %}
+  <tr>
+	<td>
+	  {% for j in (1..numdates) %}
+	  {% assign lecdate = site.data.dates[datepos] %}
+	  {% assign datepos = datepos | plus: 1 %}
+	  {{ lecdate }}
+	  {% endfor %}
+	</td>
 	<td><b>{{ l.title }}</b></td>
 	<td>{{ l.description }}
 	  {% if l.slides %}
+	  <br/>
 	  <b>Slides:</b>
 	  <ul>
 	  {% for s in l.slides %}
 	  {% assign slide = site.lectures | where: "shortname", s | first %}
-	  <li><a href="{{ site.baseurl }}/{{ slide.url }}">{{ slide.title }}</a></li>
+	  <li><a href="{{ site.baseurl }}/{{ slide.url }}">{{ slide.title }}</a> <a href="{{ site.baseurl }}/{{ slide.url }}?print-pdf"><i class="far fa-file-pdf"></i></a> </li>
 	  {% endfor %}
 	  </ul>
 	  {% endif %}

@@ -19,6 +19,143 @@ title: "What is Java?"
 
 		* Imperative and Object-oriented
 		* Stricly typed
-		* Compiled to byte-code for the Java Virtual Machiine (**JVM**)
+		* Automatic memory management (garbage-collected)
+		* Compiled to byte-code for the Java Virtual Machine (**JVM**)
 	</textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Creating Object
+	* objects are created with `new` operator
+	```java
+	new Object()
+	```
+	* `new` returns a **reference** to the newly created object that we can use to manipulate it
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Reference Variables
+	* In Java there are no variables of object types. All variables are reference types, i.e., they store a reference to an object, but not the object itself
+	* A reference variable is declared like this:
+	```java
+	<class> <variable_name>
+	```
+	* For example, to create a reference variable called `x` that stores references to objects that are instances of class `String`:
+	```java
+	String x;
+	```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Null
+	* Java has a special **literal** reference value `null` that means that a reference is currently not pointing to any object
+	* We can compare whether a value is `null` using equality like so
+	```java
+	x == null
+	```
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## How References Work
+	```java
+	Object x = null;
+	```
+  </textarea>
+</section>
+
+
+<section>
+{% digraph %}
+node [shape=rectangle, style="rounded,filled", fillcolor="lightcyan1"];
+
+x [label="x"];
+null [label="null", fillcolor="tomato"];
+
+x -> null;
+{% enddigraph %}
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## How References Work
+	```java
+	Object x = new Object();
+	```
+  </textarea>
+</section>
+
+<section>
+{% digraph %}
+node [shape=rectangle, style="rounded,filled", fillcolor="lightcyan1"];
+
+x [label="x"];
+O1 [label="Object 1"];
+
+x -> O1;
+{% enddigraph %}
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## How References Work
+	```java
+	Object x = new Object();
+	x = new Object();
+	```
+  </textarea>
+</section>
+
+<section>
+{% digraph %}
+node [shape=rectangle, style="rounded,filled", fillcolor="lightcyan1"];
+
+x [label="x", rank=0];
+
+{
+O1 [label="Object 1", rank=1];
+O2 [label="Object 2", rank=1];
+}
+
+x -> O2;
+{% enddigraph %}
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Objects that are no longer referenced
+	* In the previous example `Object 1` is no longer referenced by any variable
+	* There is no way for our program to ever again get a reference to this object!
+	* This object still occupies memory
+	* Java uses automatic memory management
+	  * We cannot destroy objects
+	  * How to avoid filling up our memory with useless objects over time?
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Garbage Collection
+	* Java implements a concept called **garbage collection** to deal with this problem
+	* The Java VM garbage collector detects unreachable objects and deletes them
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Garbage Collection
+	* **Advantages**
+	  * We do not have to clean-up ourselves
+	  * We cannot accidentally reference an object that no longer exists
+	* **Disadvatanges**
+	  * We may run out of memory if references to unused objects are not cleaned up
+	  * Garbage collection is costly and we have very limited control
+  </textarea>
 </section>
