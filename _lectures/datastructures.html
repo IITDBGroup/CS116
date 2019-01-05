@@ -1,0 +1,282 @@
+---
+shortname: datastructures
+title: "Basic Datastructures - Collections and Trees"
+---
+
+<section data-markdown>
+	<textarea data-template>
+		# CS116 - {{ page.title }}
+
+		**Lecturer**: [Boris Glavic]({{ site.data.instructor.home }})
+
+		**Semester**: Spring 2019
+	</textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## What is a datastructure?
+	* A data structure allows use to organize information
+	* Here we will focus on collection and tree data structures
+	* A collection stores one or more elements of a certain type
+	* There are different types of collections based on
+	  * how we can access the elements of the collection
+	  * .. and how the elements are organized
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	# Lists
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## The List Datastructure
+	* A List stores a sequence of elements of a certain type
+	* We will use `[]` to denote lists
+	  * e.g., `[1,15,2,3]` is a list of integers
+	* Lists allow us to access an element at a certain position in the sequence
+	* Lists allow elements to be inserted or deleted
+	* The empty list is denoted as `[]`
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## List example
+	* If we append the element `3` to the list `[1,5]` we get:
+	  * `[1,5,3]`
+	* If we retrieve the 2nd element from this list we get:
+	  * 5
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## List Implementations
+	* **Dynamic Array**
+	  * We use an array to store the elements of the list
+	  * Arrays are of a fixed size, but list can grow over time. How to deal with this?
+	* **Linked List**
+	  * We store the list as list cells which are containers that store a data element and a reference to the next cell in the list
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Dynamic Array
+	* We can use an array to store the elements of the list
+	  * We create the array using an arbitary fixed intial size, e.g., 10
+	  * The number of elements in the list is maintained separatly
+	* Once the array is full we cannot insert new elements into the list anymore
+	  * To address this problem, once the list outgrows the array we
+	     * create a new larger array
+	     * copy the list elements to the new array
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Linked List - List Cells
+	* We model a list as list cells which are self-referential (a cell has a field of type cell). Each cell stores an element for the list.
+	* For example, to model a list of integers:
+
+```java
+public class ListCell {
+    public int element;
+    public ListCell next;
+
+    public ListCell (int element) {
+        this.element = element;
+    }
+}
+```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Linked List
+* Let's use `ListCell` to create a list `[1,5]`
+```java
+ListCell head = new ListCell(1); // first element
+ListCell tail = new ListCell(5); // second element
+head->next = tail; // link first to second element
+```
+  </textarea>
+</section>
+
+<section>
+{% graphviz %}
+digraph G {
+
+node[shape=rectangle,style="filled,rounded", fillcolor="lightcyan", color=black];
+rankdir="LR";
+
+   subgraph cluster_0 {
+        rankdir="TB";
+		style="filled,rounded";
+        fillcolor=wheat1;
+		node [shape=rectangle,style="filled,rounded",fillcolor="lightcyan",color=black];
+        v1[label="value: 1"];
+        n1[label="next"];
+		label = "Listcell head";
+	}
+
+
+  subgraph cluster_1 {
+        rankdir="TB";
+		style="filled,rounded";
+        fillcolor=wheat1;
+		node [shape=rectangle,style="filled,rounded",fillcolor="lightcyan",color=black];
+        v2[label="value: 5"];
+        n2[label="next"];
+		label = "Listcell tail";
+	}
+
+    null[label="null",fillcolor="red1"];
+
+    n1 -> n2;
+    n2 -> null;
+}
+{% endgraphviz %}
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Linked List
+* Now let's create a list class that stores a link to the first cell of the list
+```java
+public class List {
+    private ListCell head;
+}
+```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Linked List
+* Let's use `ListCell` to create a list `[1,5]`
+```java
+ListCell e1 = new ListCell(1); // 1st element
+ListCell e2 = new ListCell(5); // 2nd element
+e1->next = e2; // link 1st to 2nd element
+List myList = new List();
+myList.head = e1; // 1st element = head
+```
+  </textarea>
+</section>
+
+<section>
+{% graphviz %}
+digraph G {
+
+node[shape=rectangle,style="filled,rounded", fillcolor="lightcyan", color=black];
+rankdir="LR";
+
+   subgraph cluster_0 {
+        rankdir="TB";
+		style="filled,rounded";
+        fillcolor=wheat1;
+		node [shape=rectangle,style="filled,rounded",fillcolor="lightcyan",color=black];
+        h[label="head"];
+		label = "List myList";
+	}
+
+   subgraph cluster_1 {
+        rankdir="TB";
+		style="filled,rounded";
+        fillcolor=wheat1;
+		node [shape=rectangle,style="filled,rounded",fillcolor="lightcyan",color=black];
+        v1[label="value: 1"];
+        n1[label="next"];
+		label = "Listcell head";
+	}
+
+
+  subgraph cluster_2 {
+        rankdir="TB";
+		style="filled,rounded";
+        fillcolor=wheat1;
+		node [shape=rectangle,style="filled,rounded",fillcolor="lightcyan",color=black];
+        v2[label="value: 5"];
+        n2[label="next"];
+		label = "Listcell tail";
+	}
+
+    null[label="null",fillcolor="red1"];
+
+    h -> n1;
+    n1 -> n2;
+    n2 -> null;
+}
+{% endgraphviz %}
+</section>
+
+
+
+
+<section>
+{% graphviz %}
+digraph G {
+
+node[shape=rectangle,style="filled,rounded", fillcolor="lightcyan", color=black];
+rankdir="TB";
+
+   subgraph cluster_0 {
+        rankdir="TB";
+		style="filled,rounded";
+        fillcolor=wheat1;
+        node [shape=rectangle,style="filled,rounded",fillcolor="lightcyan",color=black];
+        edge [style="invis"];
+        v1[label="value: 5"];
+        l1[label="left"];
+        r1[label="right"];
+        v1->l1;
+        v1->r1;
+	}
+
+   subgraph cluster_1 {
+        rankdir="TB";
+		style="filled,rounded";
+        fillcolor=wheat1;
+		node [shape=rectangle,style="filled,rounded",fillcolor="lightcyan",color=black];
+        edge [style="invis"];
+v2[label="value: 4"];
+        l2[label="left"];
+r2[label="right"];
+        v2->l2;
+        v2->r2;
+	}
+
+
+   subgraph cluster_2 {
+        rankdir="TB";
+		style="filled,rounded";
+        fillcolor=wheat1;
+		node [shape=rectangle,style="filled,rounded",fillcolor="lightcyan",color=black];
+        edge [style="invis"];
+v3[label="value: 6"];
+        l3[label="left"];
+r3[label="right"];
+v3 -> l3;
+v3 -> r3;
+	}
+
+
+    null[label="null",fillcolor="red1"];
+
+    l1 -> v2;
+    r1 -> v3;
+l2 -> null;
+r2 -> null;
+l3 -> null;
+    r3 -> null;
+}
+{% endgraphviz %}
+</section>

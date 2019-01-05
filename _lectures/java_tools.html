@@ -1,0 +1,79 @@
+---
+shortname: tools
+title: "Java Tools"
+---
+
+<section data-markdown>
+	<textarea data-template>
+		# CS116 - {{ page.title }}
+
+		**Lecturer**: [Boris Glavic]({{ site.data.instructor.home }})
+
+		**Semester**: Spring 2019
+	</textarea>
+</section>
+
+<section data-markdown>
+	<textarea data-template>
+		## JDK
+
+		* The Java runtime environment (JRE)
+		  * Provides a java virtual machine (binary `java`) which allows compiled java byte code to be executed
+		* The Java development kit (JDK)
+		  * Also include the java compiler `javac` which compiles java source code to byte code
+		  *
+	</textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Java Binary
+	* Use the `java` binary to start a virtual machine and execute code
+	```shell
+	$java -cp <class_path> <class_name>
+	```
+	* `<class_path>` - the class path is a colon-separated list of directories and jar files which contain the classes which are needed to run the main method of `<class_name>`
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## The Java Compiler
+	* Use the `java` compiler to compile java source files (`.java`) into byte-code for the VM (`class`) files
+	```shell
+	$javac -cp <class_path> -d <outdir> <source_files>
+	```
+	* the generated `.class` files are stored in a package directory structure in folder `<outdir>`
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## javadoc
+	* Tool for generating documentation from comments in class files. We will discuss this in more detail when talking about [Documentation]({{ site.baseurl }}/lectures/javadoc.html)
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## jar
+	* A tool for creating, inspecting, and extracting `.jar` files
+	* A jar file packages Java sources, classes, documentation, and other content
+	* `.jar` files are a convenient way to package your compiled java code
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## jconsole
+	* A monitoring tool that allows you to monitor and manage java applications
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## jdb
+	* A commandline debugger for java
+	* We will talk more about `jdb` when discussing [debugging]({{ site.baseurl }}/lectures/debug.html)
+  </textarea>
+</section>
