@@ -1,7 +1,24 @@
-- name: TA1
-  email: ta@iit.edu
-  home: "http://www.cs.iit.edu/~glavic/"
-  phone: 312 312 312
-  location: SB 205
-  officehours: Mondays, 10-11
-- name: TA2
+- name: "Anna Benson"
+  email: abenson@hawk.iit.edu
+#  home: "http://www.cs.iit.edu/~glavic/"
+#  phone: 312 312 312
+  location: SB 108
+  officehours: TBA
+  lab: CS116-L06
+  type: undergraduate
+- name: "Noah Song"
+  email: nsong4@hawk.iit.edu
+#  home: "http://www.cs.iit.edu/~glavic/"
+#  phone: 312 312 312
+  location: SB 108
+  officehours: TBA
+  lab: CS116-L06
+  type: undergraduate
+- name: "Shaokang Jiang"
+  email: sjiang27@hawk.iit.edu
+#  home: "http://www.cs.iit.edu/~glavic/"
+#  phone: 312 312 312
+  location: SB 108
+  officehours: TBA
+  lab: CS116-L07
+  type: undergraduate
