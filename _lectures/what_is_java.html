@@ -19,8 +19,10 @@ title: "What is Java?"
 
 		* Imperative and Object-oriented
 		* Stricly typed
-		* Automatic memory management (garbage-collected)
-		* Compiled to byte-code for the Java Virtual Machine (**JVM**)
+		* Automatic memory management
+		  * garbage-collected
+		* Compiled to byte-code for the Java Virtual Machine
+		  * **JVM**
 	</textarea>
 </section>
 
@@ -121,9 +123,9 @@ title: "What is Java?"
   <textarea data-template>
 	## Methods
 	* **Methods**: are blocks of code
-	* **Input Parameters**: are a list of `<type> <name>` pairs that defined what input values of which types should be passed to the method.
-	* **Return Type**: methods return values of a certain type. In Java methods that do not return a value have the special return type `void`.
-	* **Body**: the method body is code that is executed when the method is called. Within the method body the values passed to the method are vailable through their parameter names
+	* **Input Parameters**: are a list of `<type> <name>` pairs that defined what input values of which types should be passed to the method
+	* **Return Type**: methods return values of a certain type. In Java methods that do not return a value have the special return type `void`
+	* **Body**: the method body is code that is executed when the method is called. Within the method body the values passed to the method are available through their parameter names
   </textarea>
 </section>
 
@@ -143,6 +145,20 @@ title: "What is Java?"
   </textarea>
 </section>
 
+<section data-markdown>
+  <textarea data-template>
+	## User-defined types
+	* Most languages allow the user to define new **types**.
+	> **Example:** In the C language you can create `structs` which consists of multiple named elements
+
+	```c
+	struct ComplexNumber {
+	   float realComponent;
+	   float irrealComponent;
+	}
+	```
+  </textarea>
+</section>
 
 
 <section data-markdown>
@@ -154,7 +170,113 @@ title: "What is Java?"
 <section data-markdown>
   <textarea data-template>
 	## Object-Oriented Programming
-	* Programs
+
+	* Object-oriented programming is a special form of imperative programming supporting a special category of **types** called **classes**.
+	* Values of a class type are **objects**
+	  * **Terminology**: An object is an **instance** of a class
+	* Specific to classes is that they define **data** as well as **functionality**
+	  * Compare with structs that only store data
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Anatomy of a Class
+
+	* A class has **fields** that have a *type* and a *name*
+	* A class has **methods** which implement functionality
+	* Fields and methods can either be **instance** or **static**
+	  * **Instance** fields and methods exists for each instance of a class
+	  * **Static** fields and methods exist only once for a class independent of how many instances of the class have been created
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Inheritance
+
+	* In object-oriented programming a class can be **inherited** from another class
+	* If class `A` inherits from class `B` then
+	  * `A` is called the **superclass**
+	  * `B` is called the **subclass**
+	* The subclass inherits all fields and methods from the superclass
+	  * this allows for code reuse
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Inheritance Example
+	```java
+	class Employee {
+	  String name;
+	  int salary;
+
+	  String getName() {
+	    return name;
+	  }
+	}
+
+	class Programmer extends Employee {
+      String language = "Java";
+
+	  String getLanguage() {
+	    return language;
+	  }
+	}
+	```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Encapsulation and Information Hiding
+
+	* Object-oriented programming *"philosophy"* dictates the use of information hiding
+	* By **information hiding** we mean that a class exposes an *interface* through its methods through which we interact with instances of the class. However, the fields and implementation details of the methods are hidden from us.
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Encapsulation and Information Hiding
+
+	* **Advantages**:
+	  * We can change the implementation of the class (as long as this doesn't change the semantics of its interface) without having to change all the pieces of code that use the class
+	* **Disadvantages**:
+	  * This can lead to boilerplate code (using IDEs or good editors this is not really a problem)
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Getter and Setter Methods
+
+	* To implement information hiding in Java it is idiomatic use **Getter** and **Setter** methods to allow clients of the class to access data. The convention is that the getter for a field `myfield` is called `getMyfield` and the setter for `myfield` is called `setMyfield`
+
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Getter and Setter Examples
+
+	```java
+	class Person {
+	  int salary;
+
+	  int getSalary() {
+	    return salary;
+	  }
+
+	  void setSalary(int salary) {
+	    this.salary = salary;
+	  }
+	}
+	```
   </textarea>
 </section>
 
@@ -189,7 +311,8 @@ title: "What is Java?"
 
 	* Languages restrict the validaty of constructs in a program to parts of the a program.
 	* We will discuss Java scopping rules later on, but here is one example
-	  * A variable is only valid in the part of the program after its declaration
+	* A variable is only valid in the part of the program after its declaration
+
 	```java
 	x = 3; // invalid since x has not been declared yet
 	int x;
@@ -229,12 +352,43 @@ title: "What is Java?"
   </textarea>
 </section>
 
+<section data-markdown>
+  <textarea data-template>
+	## Statements and Code blocks
+
+	* In Java, **statements** are always ended with `;`
+	* Sequences of statements can be grouped together into **code blocks** which are enclosed in `{}`
+  </textarea>
+</section>
+
 
 
 <section data-markdown>
   <textarea data-template>
-	## Types
-	* In imperative programming we use variables
+	## Java Types
+	* Java distinguishes between two categories of types:
+	* **Primitive types**
+	  * e.g., an `int` or `boolean`
+	* **Classes**
+	  * e.g., `String`
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Variables
+
+	* **Declaration**:
+
+	```java
+	int x; // an int variable
+	```
+
+	* **Assignment**:
+
+	```java
+	x = 13; // assign 13 to x
+	```
   </textarea>
 </section>
 
@@ -242,10 +396,13 @@ title: "What is Java?"
 <section data-markdown>
   <textarea data-template>
 	## Creating Object
-	* objects are created with `new` operator
+	* objects are created with `new` operator like this:
+	> `new <class_name>(<parameters>)`
+
 	```java
-	new Object()
+	new Object() // create an object of class "Object"
 	```
+
 	* `new` returns a **reference** to the newly created object that we can use to manipulate it
   </textarea>
 </section>
@@ -269,7 +426,7 @@ title: "What is Java?"
   <textarea data-template>
 	## Null
 	* Java has a special **literal** reference value `null` that means that a reference is currently not pointing to any object
-	* We can compare whether a value is `null` using equality like so
+	* We can assign `null` to reference variables and check whether a value is `null` using equality like so
 	```java
 	x == null
 	```
@@ -343,6 +500,14 @@ x -> O2;
 {% enddigraph %}
 </section>
 
+<section data-markdown>
+  <textarea data-template>
+	## Java Notebooks
+
+	* We discuss the basic syntax and semantics in much more detail in the [notebooks]({{ site.baseurl }}/lectures.html) for the first part of the class.
+  </textarea>
+</section>
+
 
 <section data-markdown>
   <textarea data-template>
@@ -383,6 +548,36 @@ x -> O2;
 	  * Garbage collection is costly and we have very limited control
   </textarea>
 </section>
+
+<section data-markdown>
+  <textarea data-template>
+	# The Java Virtual Machine
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## The Java Virtual Machine
+
+	* Unlike languages like `C` of `C++`, Java is source code is not compiled into platform-specific machine code, but into **byte-code** (instructions) for a Java Virtual Machine (JVM)
+	* To execute compiled Java code, you need an implementation of the JVM that simulates the execution of Java byte-code on top of your hardware
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Other JVM Languages
+
+	* Java is not the only language that can be compiled into JVM byte-code
+	* Some other languages that can be run on the JVM are:
+	  * **Scala** - an object-oriented and functional language (famous for its use in Spark)
+	  * **Clojure** - a Lisp dialect
+	  * **Jython** - an implementation of Python on top of the JVM
+	* A comprehensive list of JVM languages: [Wikipedia](https://en.wikipedia.org/wiki/List_of_JVM_languages)
+  </textarea>
+</section>
+
+
 
 <section data-markdown>
   <textarea data-template>

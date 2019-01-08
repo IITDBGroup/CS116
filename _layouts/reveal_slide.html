@@ -79,6 +79,15 @@
           transition: 'slide', // none/fade/slide/convex/concave/zoom
         {% endif %}
 
+		// jekyll menu
+		menu: {
+			numbers: true,
+			width: 'wide',
+			titleSelector: 'h1',
+			hideMissingTitles: true
+		},
+
+
         // Optional reveal.js plugins
         dependencies: [
           { src: '{{ "/assets/js/reveal.js/lib/js/classList.js" | prepend: site.baseurl }}', condition: function() { return !document.body.classList; } },
