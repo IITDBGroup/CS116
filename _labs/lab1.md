@@ -1,12 +1,12 @@
 ---
 title: Lab 1
-shortdescription: "Create a simple user-defined class and use arithmetic and conditional expressions in Java."
-due: TBA
+shortdescription: "Create a simple user-defined class, use control constructs, and use expressions in Java."
+due: 01/25
 tasks:
   - points: 12
     shortdescription: "Design, implement, and use a simple class."
   - points: 8
-    shortdescription: "Use of control structures and expressions."
+    shortdescription: "Use of control constructs and expressions."
 ---
 
 ## {{ page.tasks[0].shortdescription }}
