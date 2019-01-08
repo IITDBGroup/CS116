@@ -26,6 +26,221 @@ title: "What is Java?"
 
 <section data-markdown>
   <textarea data-template>
+	# Imperative Programming
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Imperative Programming
+
+	* In imperative programming we specify what operations to execute and in which order
+	* Alternative forms of programming include **functional** and **logic programming**
+	* Main imperative programming constructs:
+	  * **Variables**
+	  * **Expression**
+	  * **Methods**
+	  * **Control Structures**
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Variables
+
+	* **Variables**: are used to store a **value** of a certain **type**, e.g., an integer variable
+	* Variables have to be declared (exactly once) before they are used:
+	```java
+	int x; // define a variable of type int in Java
+	```
+	* Variables can be assigned values (multiple times):
+	```java
+	int x;
+	x = 1; // assign the value 1 to x
+	x = 2; // assign the value 2 to x
+	```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Expressions
+
+	* **Expression**: expressions consists of variables, **literals**, **operators**, and **method** calls.
+	* An expression evaluates to a *result* that is determined based on the values of variables used in the expression and the return value of methods.
+	  * **Literals**: A constant value of a certain type, e.g., `1` is an integer literal
+	  * **Operators**: Take one or more values as input and return a value
+	  * **Method Calls**: Calling a piece of code that take zero or more values as input **parameters**  and return zero or one values
+	```java
+	int x;
+	x = 1 + 1; // assign to x the value of expression 1 + 1
+	```
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Expressions
+
+	* **Literals**: A constant value of a certain type
+	```java
+	int x;
+	x = 15; // assign to x the literal 15
+	```
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Expressions
+
+	* **Operators**: Take one or more values of a **type** (the types of the inputs are not necessarily the same) as input and return a value (possible of a different type)
+	* For instance, the operator `+` in Java may takes to integer values as input and returns their sum
+	```java
+	int x;
+	x = 1 + 1; // assign to x the value of expression 1 + 1
+	```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Expressions
+	  * **Method Call**: **Methods** are blocks of code that take zero or more values as input **parameters**  and return zero or one values. A method call `<methodname>(<parameters>)` evaluates to the result returned by the method `<methodname>` for input `<methodname>`
+	```java
+	int x;
+	x = myMysteryMethod(); // assign to x the result of the method myMysteryMethod
+	```
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Methods
+	* **Methods**: are blocks of code
+	* **Input Parameters**: are a list of `<type> <name>` pairs that defined what input values of which types should be passed to the method.
+	* **Return Type**: methods return values of a certain type. In Java methods that do not return a value have the special return type `void`.
+	* **Body**: the method body is code that is executed when the method is called. Within the method body the values passed to the method are vailable through their parameter names
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Method Example
+	* In Java the syntax for defining a method is `<return_type> <method_name> (<parameters>)`
+	* Inside the method body the keyword `return` is used to declare what value should be returned
+
+	```java
+	int mult(int a, int b) { // declare method mult
+	   return a * b;
+	}
+
+	int z = mult(5,3); // expression calling method mult with two integer literals as input
+	```
+  </textarea>
+</section>
+
+
+
+<section data-markdown>
+  <textarea data-template>
+	# Object-Oriented Programming
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Object-Oriented Programming
+	* Programs
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Syntax and Semantics
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Syntax
+
+	* The syntax of a language defines what are valid strings (sequences of symbols) in the language
+	* If a program confirms with the syntax of a language then we call it syntactially correct
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Semantics
+
+	* The semantics of the language defines its meaning
+	  * e.g., according to the semantics of Java `1 + 1` evaluates to `2`
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Scope
+
+	* Languages restrict the validaty of constructs in a program to parts of the a program.
+	* We will discuss Java scopping rules later on, but here is one example
+	  * A variable is only valid in the part of the program after its declaration
+	```java
+	x = 3; // invalid since x has not been declared yet
+	int x;
+	```
+	```java
+	int x;
+	x = 3; // that is ok!
+	```
+  </textarea>
+</section>
+
+
+
+<section data-markdown>
+  <textarea data-template>
+	# Strictly Typed
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Strict Typing
+	* Java is a strictly typed language which means that in all contexts only expression of an appropriate type can be used. For instance:
+	  * Variables are assigned a type at declaration only expressions of this type can be assigned to the variable
+    * As a strictly typed language, Java enforces type safety at compile and runtime
+
+	```java
+	int x;
+	x = "Hello world!" // compile time error - "Hello world!" is a String
+	```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Java Syntax and Semantics 101
+  </textarea>
+</section>
+
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Types
+	* In imperative programming we use variables
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
 	## Creating Object
 	* objects are created with `new` operator
 	```java
@@ -128,6 +343,14 @@ x -> O2;
 {% enddigraph %}
 </section>
 
+
+<section data-markdown>
+  <textarea data-template>
+	# Garbage Collection
+  </textarea>
+</section>
+
+
 <section data-markdown>
   <textarea data-template>
 	## Objects that are no longer referenced
@@ -139,6 +362,7 @@ x -> O2;
 	  * How to avoid filling up our memory with useless objects over time?
   </textarea>
 </section>
+
 
 <section data-markdown>
   <textarea data-template>
@@ -157,5 +381,20 @@ x -> O2;
 	* **Disadvatanges**
 	  * We may run out of memory if references to unused objects are not cleaned up
 	  * Garbage collection is costly and we have very limited control
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Summary
+
+	* Imperative Programming
+	* Object-oriented Programming
+	* Syntax and Semantics
+	* Imperative Constructs
+	  * Variables, Expressions, Methods, Control Constructs
+	* Java 101
+	  * A bit of syntax and semantics
+	  * JVM, garbage collections
   </textarea>
 </section>

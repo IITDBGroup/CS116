@@ -1,0 +1,6 @@
+<h1>Objectives</h1>
+<ul>
+{% for t in page.tasks %}
+<li><b>{{ t.points }} Points</b> - {{ t.shortdescription }}</li>
+{% endfor %}
+</ul>

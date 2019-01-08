@@ -11,6 +11,14 @@ Assignments are due each week before the labs. We will create a git repository f
 {% for lab in site.labs %}
 # [{{ lab.title }}]({{ site.baseurl }}{{ lab.url }})
 
+{% assign points = 0 %}
+{% for t in lab.tasks %}
+{% assign points = points | plus: t.points %}
+{% endfor %}
+
 {{ lab.shortdescription }}
 
+**Points: {{ points }}**
+
+**Due: {{ lab.due }}**
 {% endfor %}

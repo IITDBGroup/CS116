@@ -30,6 +30,7 @@ plugins:
   - jekyll-feed
   - jekyll-jupyter-notebook
   - jekyll-diagrams
+  - jekyll-katex
 
 # Scripts
 
@@ -79,7 +80,7 @@ defaults:
       path: ""
       type: "labs"
     values:
-      layout: "single"
+      layout: "lab"
       toc: false
       classes: wide
   - scope:
@@ -89,6 +90,7 @@ defaults:
       layout: "reveal_slide"
       toc: false
       classes: wide
+
 
 # Collections
 collections:

@@ -9,7 +9,7 @@ lab:
   when: "Fri, 1:50 pm - 2:40 pm"
 github_repos:  IITDBGroup/CS116
 midterm:
-  when: 03/04
+  when: "03/04, 1:50 pm - 2:40 pm"
   where: "IIT Tower 6D6-1"
 final:
   when: TBA
@@ -17,3 +17,24 @@ final:
 due:
   project_design: 04/15
   project_implementation: 05/01
+piazza: "https://piazza.com/iit/spring2019/cs116/home"
+workload:
+  - name: "Lab assignments"
+    percentage: 30
+  - name: "Project"
+    percentage: 10
+  - name: "Midterm Exam"
+    percentage: 25
+  - name: "Final Exam"
+    percentage: 35
+grading:
+  - letter: "A"
+    plus: 90
+  - letter: "B"
+    plus: 80
+  - letter: "C"
+    plus: 70
+  - letter: "D"
+    plus: 60
+  - letter: "E"
+    lessthan: 60

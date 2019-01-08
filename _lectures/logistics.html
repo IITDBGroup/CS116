@@ -66,9 +66,9 @@ title: Logistics
 		* We will learn about oject-oriented programming using Java as the language of our choice
 		* This entails learning about ...
 		  * The Java language
-		  * The object-oriented programming paradigm
+		  * The Object-oriented Programming Paradigm
 		  * Debugging, Logging, and Testing
-		  *  Data Structures
+		  * Data Structures
 		  * Basic Algorithms
 		  * Programming Techniques
 		  * Tool ecosystems
@@ -77,8 +77,9 @@ title: Logistics
 
 <section data-markdown>
 	<textarea data-template>
-	  ## Lectures
-	    * For a list of lectures see [here]({{ site.baseurl }}/lectures.html)
+	## Lectures
+
+		* For a list of lectures see [here]({{ site.baseurl }}/lectures.html)
 		* We will code during the lectures
 		* We will utilize [notebooks]({{ site.baseurl }}/notebooks.html) which are webpages documents containing:
 		  * Code
@@ -118,22 +119,18 @@ title: Logistics
 	<textarea data-template>
 		## Grading Policy
 
-*  Lab assignments: 30%
-*  Project: 10%
-*  Midterm Exam: 35%
-*  Final Exam: 35%
+{% for w in site.data.course.workload %}*  {{ w.name }}: {{ w.percentage }}%
+{% endfor %}
 	</textarea>
 </section>
 
 
 <section data-markdown>
 	<textarea data-template>
-		## Grading Scheme
-* 90+ = A
-* 80+ = B
-* 70+ = C
-* 60+ = D
-* <60 = E
+	  ## Grading Scheme
+
+{% for g in site.data.course.grading %}* {% if g.plus %}{{ g.plus }}+{% else %}<{{ g.lessthan }}{% endif %} = {{ g.letter }}
+{% endfor %}
 	</textarea>
 </section>
 
@@ -141,8 +138,8 @@ title: Logistics
 	<textarea data-template>
 	  ## Piazza
 	  * We will use Piazza for Q&A
-	  * Please refrain from emailing me questions, but submit them through [Piazza](https://piazza.com/iit/spring2019/cs116/home) instead.
-	  * [https://piazza.com/iit/spring2019/cs116/home](https://piazza.com/iit/spring2019/cs116/home)
+	  * Please refrain from emailing me questions, but submit them through [Piazza]({{ site.data.course.piazza }}) instead.
+	  * [{{ site.data.course.piazza }}]({{ site.data.course.piazza }})
 	</textarea>
 </section>
 

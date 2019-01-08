@@ -1,20 +1,25 @@
   <div class="sidebar sticky">
 	{% if page.author_profile or layout.author_profile %}
-	<h3>Instructor</h3>
+<div itemscope itemtype="http://schema.org/Person">
+<h3>Instructor</h3>
+
 	{% assign person = site.data.instructor %}
-	{% include person_profile.html %}
+{% include person_profile.html %}
+</div>
 	{% endif %}
 
 	{% assign course = site.data.course %}
 	{% include class_profile.html %}
 
-
   {% assign tas = site.data.tas %}
-  {% if tas <> emtpy %}
+	{% if tas <> emtpy %}
+<div itemscope itemtype="http://schema.org/Person">
+	  <h3>TAs</h3>
 		  {% for ta in tas %}
 		  {% assign person = ta %}
 		  {% include person_profile.html %}
 		  {% endfor %}
+</div>
   {% endif %}
 
   {% if page.sidebar %}
