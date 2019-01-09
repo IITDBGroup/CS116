@@ -6,7 +6,7 @@ tasks:
   - points: 4
     shortdescription: "Extend some of the classes developed in previous assignments to handle exceptional conditions."
   - points: 16
-    shortdescription: "Implement a class using file and network I/O."
+    shortdescription: "Implement a class using file I/O."
 ---
 
 ## {{ page.tasks[0].shortdescription }}
