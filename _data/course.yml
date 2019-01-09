@@ -17,7 +17,7 @@ final:
 due:
   project_design: 04/15
   project_implementation: 05/01
-piazza: "https://piazza.com/iit/spring2019/cs116/home"
+&piazza: "https://piazza.com/iit/spring2019/cs116/home"
 workload:
   - name: "Lab assignments"
     percentage: 30

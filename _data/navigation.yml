@@ -15,4 +15,4 @@ main:
   - title: "Notebooks"
     url: /notebooks.html
   - title: "Piazza"
-    url: {{ site.data.course.piazza }}
+    url: "https://piazza.com/iit/spring2019/cs116/home"

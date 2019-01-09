@@ -1,7 +1,7 @@
 ---
-title: Lab 4
+title: Lab 8
 shortdescription: "Exception handling and I/O"
-due: 5
+due: 10
 tasks:
   - points: 4
     shortdescription: "Extend some of the classes developed in previous assignments to handle exceptional conditions."
