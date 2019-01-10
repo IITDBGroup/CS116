@@ -4,9 +4,9 @@ shortdescription: "Lambdas and Streams"
 due: 12
 tasks:
   - points: 10
-    shortdescription: "Extend some of the classes developed in previous assignments to handle exceptional conditions."
+    shortdescription: "Lambdas."
   - points: 10
-    shortdescription: "Implement a class using file and network I/O."
+    shortdescription: "Streams."
 ---
 
 ## {{ page.tasks[0].shortdescription }}

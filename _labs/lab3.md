@@ -3,11 +3,11 @@ title: Lab 3
 shortdescription: "Using collections and arrays."
 due: 5
 tasks:
-  - points: 3
+  - points: 5
     shortdescription: "Block world"
-  - points: 3
+  - points: 5
     shortdescription: "Infinite Block world"
-  - points: 14
+  - points: 10
     shortdescription: "Ant Simulator"
 ---
 
@@ -53,8 +53,9 @@ In this task you are implementing a class `InfiniteBlockWorld` in package `lectu
 ```java
 public int[] getBounds();
 ```
-
+{% katexmm %}
 This methods returns an array with 4 elements $[ x_{left}, y_{top}, x_{right}, x_{bottom} ]$ where $x_{left}$ is the x-coordinate of the left-most white cell, $x_{right}$ is the x-coordinate of the right-most white cell, $y_{bottom}$ is the y-coordinate of the lowest white cell and $y_{top}$ is the y-coordinate of the top-most white cell.
+{% endkatexmm %}
 
 Test your infinite block world by adding a main method which creates the above example 3-by-3 grid:
 
@@ -90,13 +91,13 @@ $$M = (Q, \Gamma, b, \delta, q_0, F)$$
 
 * $Q$ is the set of states of the ant
 * $\Gamma$ is a set of cell colors. In our case $\Gamma = \{0,1\}$ where `0` represents black and `1` represents white
-* $b$ is the initial color of every cell before the start of the simulation
-* $\delta$ is a function $(Q - F) \times \Gamma \to Q \times \Gamma \times \{ L,R,T,B \}$ is the transition function which given a current state of the ant and current color of the cell it standing on returns the new state, the new color, and a direction to move to:
+* $b$ is the initial color of every cell before the start of the simulation (`0`) in our case
+* $\delta$ is a function with signature $(Q - F) \times \Gamma \to Q \times \Gamma \times \{ L,R,T,B \}$ that is called the transition function. Given a current state of the ant and current color of the cell it standing on as input  the transition function returns the new state, the new color, and a direction to move to:
   * $L$ is left, $R$ is right, $T$ is top, and $B$ is bottom
 * $q_0$ is the initial state of the ant at the start of the simulation
 * $F$ is a set of *final states*. Whenever the ant reaches one of these states, the simulation stops.
 
-When creating an ant, the states and transition function should be provides to the constructor. Furthermore, the initial state and set of final states should be specified. The `Ant` class should provide the following  methods
+When creating an ant, the states and transition function should be provided to the constructor. Furthermore, the initial state and set of final states should be specified. The `Ant` class should provide the following  methods
 
 * `void step()` that moves the simulation one step forward.
 * `String getAntState()` which returns the current state of the ant
@@ -105,11 +106,24 @@ When creating an ant, the states and transition function should be provides to t
 
 To test the ant class, write a `main` method which creates the ant described below and iteratively prints the state of the world using the same representation as the one used for `toString` of the `InfiniteBlockWorld` except that the position of the ant is shown as character `A`. The simulation should be progressed by a step if the user presses any key except for key `q` which stops the program.
 
-> To avoid excessive output on the terminal, you can use print an appropriate amount of delete characters (encoded as `\b` in Java) to delete the previous printout before printing a new state
+> To avoid excessive output on the terminal, you can print an appropriate amount of delete characters (encoded as `\b` in Java) to delete the previous printout before printing a new state
+{: .notice--info }
+
+> For convenience it may also be useful to show the ant's current state after each step.
 {: .notice--info }
 
 ## Our Ant
 
+The ant we will be using for testing is called [Langton's ant](https://en.wikipedia.org/wiki/Langton%27s_ant). It has four states recording the direction it is facing to. It's behaviour is governed by the following simple rules:
+
+* If it stands on a *black* cell, then it changes the color to *white* and turns $90^{\circ}$ to the right and moves in the new direction it is facing
+* If it stands on a *white* cell, then it changes the color to *black* and turns $90^{\circ}$ to the left and moves in the new direction it is facing
+
+> Langton's ant a famous example for how a simple set of rules can produce complex behaviour as you will see when running your ant.
+{: .notice--info }
+
+
+This behaviour is realized by the transition function shown below. The initial state of the and is `FacesTop` and it has no final states (it runs forever).
 
 | Current State  |Current Color|New State  |New Color|Move to  |
 |--------------|-------------|-------------|---------|---------|
@@ -123,35 +137,32 @@ To test the ant class, write a `main` method which creates the ant described bel
 | FacesBottom  | White       | FacesRight  | Black   | Right   |
 
 
+{% graphviz %}
+digraph {
+node [shape="circle",style="filled", fillcolor="lightcyan1"];
 
-{% digraph %}
-node [style="rounded,filled", fillcolor="lightcyan1"];
+n1 [ label="FaceLeft",  pos="0,1!" ];
+n2 [ label="FaceRight", pos="2,1!" ];
+n3 [ label="FaceTop", shape="doublecircle", pos="1,2!" ];
+n4 [ label="FaceBottom", pos="1,0!" ];
 
-n1 [ label="FaceLeft", style="double,filled" ];
-n2 [ label="FaceRight" ];
-n3 [ label="FaceTop" ];
-n4 [ label="FaceBottom" ];
+n1 -> n4 [label="0"];
+n1 -> n3 [label="1"];
 
-n1 -> n2;
-n1 -> n3;
-n1 -> n4;
+n2 -> n3 [label="0"];
+n2 -> n4 [label="1"];
 
-n2 -> n1;
-n2 -> n3;
-n2 -> n4;
+n3 -> n1 [label="0"];
+n3 -> n2 [label="1"];
 
-n3 -> n1;
-n3 -> n2;
-n3 -> n4;
-
-n4 -> n1;
-n4 -> n2;
-n4 -> n3;
-{% enddigraph %}
+n4 -> n1 [label="1"];
+n4 -> n2 [label="0"];
+}
+{% endgraphviz %}
 
 
 
-> Note that `Ant`'s are two-dimensional versions of **Turing machines** which are a universal model of computation based on which complexity theory is based on. You will more about Turing Machines in the future in theoretical CS courses.
+> Note that ants are two-dimensional versions of **Turing machines** which are a universal model of computation on which complexity theory is based on. You will learn more about Turing Machines in the future in theoretical CS courses.
 {: .notice--info }
 
 {% endkatexmm %}
