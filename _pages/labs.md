@@ -20,5 +20,6 @@ Assignments are due each week before the labs. We will create a git repository f
 
 **Points: {{ points }}**
 
-**Due: {{ lab.due }}**
+{% assign realdue = lab.due | minus: 1 %}
+**Due: {{ site.data.labdates[realdue] }}**
 {% endfor %}

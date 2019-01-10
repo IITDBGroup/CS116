@@ -1,7 +1,7 @@
 ---
 title: Lab 1
 shortdescription: "Create a simple user-defined class, use control constructs, and use expressions in Java."
-due: 01/25
+due: 2
 tasks:
   - points: 12
     shortdescription: "Design, implement, and use a simple class."

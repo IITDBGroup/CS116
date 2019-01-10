@@ -1,3 +1,6 @@
+{% assign realdue = page.due | minus: 1 %}
+<h2>Due: {{ site.data.labdates[realdue] }}</h2>
+
 <h1>Objectives</h1>
 <ul>
 {% for t in page.tasks %}
