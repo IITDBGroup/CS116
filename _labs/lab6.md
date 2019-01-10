@@ -1,7 +1,7 @@
 ---
 title: Lab 6
 shortdescription: "Searching and Sorting"
-due: 5
+due: 8
 tasks:
   - points: 10
     shortdescription: "Searching for friends."

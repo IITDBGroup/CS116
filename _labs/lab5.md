@@ -1,7 +1,7 @@
 ---
 title: Lab 5
 shortdescription: "Debugging, Testing, and Logging"
-due: 5
+due: 7
 tasks:
   - points: 6
     shortdescription: "Debug a class"
