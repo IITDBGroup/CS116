@@ -1,9 +1,9 @@
-- name: "Anna Benson"
-  email: abenson@hawk.iit.edu
+- name: "Shyam Patel"
+  email: spatel124@hawk.iit.edu
 #  home: "http://www.cs.iit.edu/~glavic/"
 #  phone: 312 312 312
   location: SB 108
-  officehours: TBA
+  officehours: "Wednesdays, 5:00 pm - 6:00 pm"
   lab: CS116-L06
   type: undergraduate
 - name: "Noah Song"

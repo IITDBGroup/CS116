@@ -500,23 +500,6 @@ x -> O2;
 {% enddigraph %}
 </section>
 
-<section data-markdown>
-  <textarea data-template>
-	## The heap and call stack
-
-	* Objects are allocted in a memory area called the **heap**
-	* When a **method** is called, then temporary memory for the execution of this method is alled on the **stack**
-	* The call stack stores all methods that are currently executing in reverse order of calling
-  </textarea>
-</section>
-
-
-<section data-markdown>
-  <textarea data-template>
-	##
-  </textarea>
-</section>
-
 
 <section data-markdown>
   <textarea data-template>
@@ -525,6 +508,82 @@ x -> O2;
 	* We discuss the basic syntax and semantics in much more detail in the [notebooks]({{ site.baseurl }}/lectures.html) for the first part of the class.
   </textarea>
 </section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Heap and Stack
+  </textarea>
+</section>
+
+
+
+<section data-markdown>
+  <textarea data-template>
+	## The heap and stack
+	* Objects are allocted in a memory area called the **heap**
+	* When a **method** is called, then temporary memory for the execution of this method is allocated on the **stack**
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Controlflow and the Call Stack
+
+	* Execution in Java proceeds top-down
+	```java
+	x = 3; // first statement to be executed
+	x = 5; // second statement to be executed
+	...
+	```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## What happens if a method is called?
+
+	* When a method is called the following happens:
+	   * A new **stack frame** for the method is created and is put on top of the **call stack**
+	   * Within the stack frame memory is allocated for the parameters and local variables of the method
+	   * Parameters are set to the values produced as input to the method call
+	   * The control is handed over to the method and the code in the method body is executed
+
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## The Call Stack
+
+	* The **Call Stack** is a data structure that keeps track of what methods are currently running and their call hierarchy
+	  * Whenever a method is called it is put on the stack
+	  * Whenever a method returns it is removed from the call stack
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## When a method finishes execution
+
+	* When a method finishes execution than the following happens:
+	   * The call frame for the method is deallocated
+	   * The return value (if any) is passed on to the caller of the method and execution continues at the place where the method was called
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Caveat
+
+	* A typical misunderstanding is that parameters and local variables of a method exist once. However, this is **not** the case. Each invocation of a method creates new copies of these variables and parameters that are independ of the parameters and variables of other active invocations of the method
+  </textarea>
+</section>
+
+
+
 
 
 <section data-markdown>
