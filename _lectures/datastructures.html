@@ -16,8 +16,8 @@ title: "Basic Datastructures - Collections and Trees"
 <section data-markdown>
   <textarea data-template>
 	## What is a datastructure?
-	* A data structure allows use to organize information
-	* Here we will focus on collection and tree data structures
+	* A **data structure** allows use to organize information
+	* Here we will focus on **collection** and **tree** data structures
 	* A collection stores one or more elements of a certain type
 	* There are different types of collections based on
 	  * how we can access the elements of the collection
@@ -218,7 +218,97 @@ rankdir="LR";
 {% endgraphviz %}
 </section>
 
+<section data-markdown>
+  <textarea data-template>
+	## Example Application - Fifo Queues
 
+	* A **Fifo Queue** (**F**irst **I**n **F**irst **Out**) is a datastructure that is naturally implemented as a list
+	* *Fifo* operations
+	  * `push(value)` - appends `value` to the end of the list
+	  * `pop()` - removes and returns the list's first element
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Example Application - Fifo Queues
+
+	* **Use case**
+	  * Resource-wait queue, e.g., multiple jobs, but only one printer
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Example Application - Stacks
+
+	* A **Stack** or **Lifo Queue** (**L**ast **I**n **F**irst **Out**)
+	* *Lifo* operations
+	  * `push(value)` - prepends `value` as a new element to the head of the list
+	  * `pop()` - removes the first element from the list and returns it
+	* **Use cases*
+	  * *"Todo"* list in many algorithms (more later)
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Trees
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Trees
+
+	* A **tree** is a hierarchical datastructure which consists of nodes
+	* A **nodes** in the tree consists of
+	  **data** - it may store a value of a certain type
+	  **children** - a node can have zero or more children. The parent-child relationship between nodes determines that hierarchy defined by a tree.
+	* A tree has a designated node called the **root** that does not have an ancestores
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Example Organigram Tree
+
+	* Let's say we want to model a the hierarchy structure of an organization
+	  * nodes are persons (we store their name as the node's data)
+	  * the children of a person (node) are the persons that directly report to this person (here we assume an employee is reporting to exactly one person)
+	  * for simplicity let's also assume that at most two employees are reporting to the same employee
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Modelling the Example
+
+```java
+public class EmpTreeNode {
+
+    public String name;
+    public EmpTreeNode child1;
+    public EmpTreeNode child2;
+
+}
+```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Example Tree Structure
+
+	* Let's say the company has three employees:
+	  * *Alice*
+	  * *Bob*
+	  * *Ann*
+	* Both *Bob* and *Ann* are reporting to *Alice*
+  </textarea>
+</section>
 
 
 <section>
@@ -234,9 +324,9 @@ rankdir="TB";
         fillcolor=wheat1;
         node [shape=rectangle,style="filled,rounded",fillcolor="lightcyan",color=black];
         edge [style="invis"];
-        v1[label="value: 5"];
-        l1[label="left"];
-        r1[label="right"];
+        v1[label="name: Alice"];
+        l1[label="child1"];
+        r1[label="child2"];
         v1->l1;
         v1->r1;
 	}
@@ -247,8 +337,8 @@ rankdir="TB";
         fillcolor=wheat1;
 		node [shape=rectangle,style="filled,rounded",fillcolor="lightcyan",color=black];
         edge [style="invis"];
-v2[label="value: 4"];
-        l2[label="left"];
+v2[label="name: Bob"];
+        l2[label="child1"];
 r2[label="right"];
         v2->l2;
         v2->r2;
@@ -261,9 +351,9 @@ r2[label="right"];
         fillcolor=wheat1;
 		node [shape=rectangle,style="filled,rounded",fillcolor="lightcyan",color=black];
         edge [style="invis"];
-v3[label="value: 6"];
-        l3[label="left"];
-r3[label="right"];
+v3[label="name: Ann"];
+        l3[label="child1"];
+r3[label="child2"];
 v3 -> l3;
 v3 -> r3;
 	}
@@ -279,4 +369,79 @@ l3 -> null;
     r3 -> null;
 }
 {% endgraphviz %}
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## What are trees good for?
+
+	* To model hierarchical data
+	  * we will see how to traverse all nodes of a tree
+	  * this allows us to find all decendents of a node
+	  * e.g., *"who is reporting to *Alice* directly or indirectly?"*
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## What are trees good for?
+
+	* As data structures for searching
+	* We will discuss this use case later when we talk about [algorithms]({{ site.baseurl }}/lectures/search_and_sort.html#/)
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Sets
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Set
+
+	* a **set** stores a set of **values**
+	* values are either in the set of not
+	  * => Sets do not allow for duplicates (the same elements appears more than once)
+	  * => There is no order among the elements of a set
+* set operations
+	  * `add(value)` - add `value` to the set
+	  * `get(value)` - returns `true` if the `value` is in the set
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	# Maps
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Map
+
+	* A **map** stores a set of **keys**
+	* A map associates a **value** with each its **key**
+	* Map operations
+	  * `get(key)`
+	    * returns the value associated with the `key`
+	  * `put(key,value)`
+	    * asscociates `value` with `key`
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Summary
+
+	* What are data structures?
+	* Collection datastructures
+	  * Lists
+	  * Trees
+	  * Sets
+	  * Maps
+  </textarea>
 </section>
