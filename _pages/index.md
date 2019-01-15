@@ -27,7 +27,7 @@ A good, but more advanced book is *Effective Java* from Joshua Bloch who impleme
 
 **Point distribution:**
 
-* Lab assignemnts (30%) - there are 10 [lab assignments]({{ site.baseurl }}/labs.html)
+* Lab assignments (30%) - there are 9 [lab assignments]({{ site.baseurl }}/labs.html)
 * Project (10%) - you have to complete a [project]({{ site.baseurl }}/project.html)
 * Midterm Exams (25%) - see [here]({{ site.baseurl }}/exams.html#midterm-exam)
 * Final Exam (35%) - see [here]({{ site.baseurl }}/exams.html#final-exam)

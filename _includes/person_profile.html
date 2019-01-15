@@ -48,6 +48,10 @@
 
 	  {% if author.phone %}
 	     <li><i class="fas fa-phone" aria-hidden="true"></i> {{ author.phone }}</li>
+		 {% endif %}
+
+	  {% if author.lab %}
+	     <li><i class="fas fa-flask" aria-hidden="true"></i> {{ author.lab }}</li>
 	  {% endif %}
 
 	  {% if author.officehours %}
