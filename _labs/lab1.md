@@ -11,7 +11,7 @@ tasks:
 
 ## {{ page.tasks[0].shortdescription }}
 
-In this task you will design several classes applying the concept of information hiding. The fields of these classes should be private and only accessible from outside world using **getter** and **setter** methods as discussed in class.
+In this task you will design several classes applying the concept of information hiding. The fields of these classes should be private and only accessible from outside world using **getter** and **setter** methods as discussed in class. You do not necessarily create a getter or setter for fields that do not have to be read or written by a client of the class.
 In addition to these basic access methods, some of the classes also have convenience methods that do basic computations using the values of fields. For each class write a main program that tests the functionality of the classes by creating an instance of the class as described below and by retrieving the values from this object.  Also implement a `toString` method for every class you design.
 
 ### Bank account (6 Points)
@@ -34,8 +34,8 @@ Create a savings account for customer `Alice` with a withdrawl limit of `$50.0`.
 
 Design and implement a class `BobsLife` in package `lecture.lab1` that simulates a simple virtual world. In this world there is a person called Bob that can be at either one of three locations: At home, at work, or at the gym. Bob has three characteristics: his `hunger`, his `fitness`, and the `dollars` (positive integer number) he owns. The class should have an instance method called `move` that moves Bob from his current location (`home`, `work`, or `gym`) to a new location.
 The simulation starts at time `0`. Time moves in steps. The simulation is moved forward by one step manually by calling an instance method `nextTime()`. Depending on Bob's location when `nextStep` is called, the following happens:
-* If Bob is at `home`, then his `hunger` is decreased by 3, because he eats a meal. However, the `hunger` can not drop below `0`. Furthermore, his `dollars` are decreased by `1` because food costs money. If Bob's hunger is already `0` then his dollars are not decreased.
-* If Bob is at `work`, then his `hunger` is increased by 2, because working makes hungry. Furthermore, his `dollars` are increased by `3` (he earns money at his job). Also he has a desk job and so his `fitness` descreases by 1.
+* If Bob is at `home`, then his `hunger` is decreased by 3, because he eats a meal. However, the `hunger` can not drop below `0`. Furthermore, his `dollars` are decreased by `1` because food costs money.
+* If Bob is at `work`, then his `hunger` is increased by 2, because working makes hungry. Furthermore, his `dollars` are increased by `3` (he earns money at his job). Also he has a desk job and so his `fitness` decreases by 1.
 * If Bob is at the `gym`, then his `hunger` is increased by `3` because workout makes hungry. His `dollars` are decrease by `2` since the `gym` costs money. On the positive side his `fitness` increases by `2`.
 
 The virtual world is quite harsh. If Bob's `hunger` goes above 6 then the poor guy starves to death. If his `dollars` drop below zero than he is broke and is thrown into jail for a life time sentence. If his `fitness` is `0` then he dies of a heart attack. The class should keep track of whether Bob is dead or in jail. If this is the case then it should no longer be possible to move Bob to another location and his characteristics do no longer change if the `nextStep` function is called.
@@ -62,9 +62,9 @@ Write a main method that tests `applyInterest` using the following test case:
 Write a class `LongLiveBob` in package `lecture.lab1` which runs a `BobsLife` simulation in its `main` method. You are allowed to write `static` helper methods for this class if need be. The task is to create a new `BobsLife` object with `0` hunger, `5` dollar, and `4` fitness. You have to advance the simulation by `1000` steps without causing Bob to die or go to jail. In each step you have the free choice to move Bob to any of the locations. Using trial-and-error you could come up with a sequence of 1000 moves that do not lead to Bob's demise or imprisonment. However, that would be quite tideous! Instead try to come up with a short sequence of moves that can be repeated abitrarily many times without leading to a bad result. Once you have such a sequence, say of length `n`, then you can repeated it ad infinum to achieve a simulation of arbitrary length! The `main` method should print all 1000 steps. Each step should be printed on a separate line showing the step number, Bob's location, hunger, dollars, fitness, and whether he is dead or in jail. For example, here is some sample output where Bob stays at home without moving:
 
 ~~~shell
-Step: 1 Location: home, Hunger: 5, dollars: 15, fitness: 3
-Step: 2 Location: home, Hunger: 2, dollars: 14, fitness: 3
-Step: 3 Location: home, Hunger: 0, dollars: 13, fitness: 3
-Step: 4 Location: home, Hunger: 0, dollars: 13, fitness: 3
+Step: 1 - Location: home, hunger: 5, dollars: 15, fitness: 3
+Step: 2 - Location: home, hunger: 2, dollars: 14, fitness: 3
+Step: 3 - Location: home, hunger: 0, dollars: 13, fitness: 3
+Step: 4 - Location: home, hunger: 0, dollars: 13, fitness: 3
 ...
 ~~~
