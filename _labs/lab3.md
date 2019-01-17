@@ -54,7 +54,7 @@ In this task you are implementing a class `InfiniteBlockWorld` in package `lectu
 public int[] getBounds();
 ```
 {% katexmm %}
-This methods returns an array with 4 elements $[ x_{left}, y_{top}, x_{right}, x_{bottom} ]$ where $x_{left}$ is the x-coordinate of the left-most white cell, $x_{right}$ is the x-coordinate of the right-most white cell, $y_{bottom}$ is the y-coordinate of the lowest white cell and $y_{top}$ is the y-coordinate of the top-most white cell.
+This methods returns an array with 4 elements $[ x_{low}, x_{high}, y_{low}, y_{high} ]$ representing a minimal bounding box around the white cells in the blockworld. That is, $x_{low}$ is the lowest x-coordinate (the left-most white cell), $x_{high}$ is the highest x-coordinate (the right-most white cell), $y_{low}$ is the lowest y-coordinate of any  white cell (0 is the first row of the matix!), and $y_{high}$ is the higehst  y-coordinate of any white cell.
 {% endkatexmm %}
 
 Test your infinite block world by adding a main method which creates the above example 3-by-3 grid:
@@ -62,16 +62,16 @@ Test your infinite block world by adding a main method which creates the above e
 ```java
 BlockWorld n = new BlockWorld(3);
 n.setCellColor(-1,-1,true); // set cell at [-1,-1]
-n.setCellColor(1,1,true); // set cell at [1,1]
+n.setCellColor(2,1,true); // set cell at [1,1]
 System.out.println(n.toString());
 ```
 
 The expected result is:
 
 ~~~shell
- XX
+ XXX
+XXXX
 XXX
-XX
 ~~~
 
 ## {{ page.tasks[2].shortdescription }}
@@ -80,7 +80,7 @@ XX
 In this task you are implementing a class `Ant` in package `lecture.lab4` that simulates an ant that moves around in the `InfiniteBlockWorld` and modifies its environment. The behaviour of an ant is controlled using a set of states. In each step of the simulation the ant
 
 * modifies its environment by changing the color of the cell it is sitting on based on the current color of the cell and the state it is in
-* then it either moves to the *left*, to the *top*, to the *right*, or to the *bottom* neighbor of the cell it is standing on. The direction is determined based on its current state and the color of the cell it is standing on (the before the change).
+* then it either moves to the *left*, to the *top*, to the *right*, or to the *bottom* neighbor of the cell it is standing on. The direction is determined based on its current state and the color of the cell it is standing on (before the change).
 * furthermore, it changes its state to a new state which again is determined based on the current state and the color observed by the end.
 
 Initially, the ant is in a designed start state (one of its states) and
@@ -104,12 +104,21 @@ When creating an ant, the states and transition function should be provided to t
 * `int[] getAntPosition()` which returns the current `x,y` coordinate of the cell where the ant currently resides
 * `InfiniteBlockWorld getWorldState()` which returns the current state of the block world
 
-To test the ant class, write a `main` method which creates the ant described below and iteratively prints the state of the world using the same representation as the one used for `toString` of the `InfiniteBlockWorld` except that the position of the ant is shown as character `A`. The simulation should be progressed by a step if the user presses any key except for key `q` which stops the program.
+To test the ant class, write a `main` method which creates the ant described below and iteratively prints the state of the world using the same representation as the one used for `toString` of the `InfiniteBlockWorld` except that the position of the ant is shown as character `A`. The simulation should be progressed by a step if the user inputs any string followed by newline  except for the following strings that have special meanings:
 
-> To avoid excessive output on the terminal, you can print an appropriate amount of delete characters (encoded as `\b` in Java) to delete the previous printout before printing a new state
+* strings starting with `h` - progress the ant by 10 steps at a time
+* strings starting with `h` - progress the ant by 100 steps at a time
+* strings starting with `t` - progress the ant by 1000 steps at a time
+* strings that are integer numbers - parse the number and progress the ant by this many steps
+* strings starting with `q` which stop the program
+
+> To avoid excessive output on the terminal, you can clear the terminal using `System.out.print(String.format("\033[2J"));`
 {: .notice--info }
 
 > For convenience it may also be useful to show the ant's current state after each step.
+{: .notice--info }
+
+> The ant described below shows some incredible complex behavior. For testing purposes you many want to use a simpler ant, e.g., one that just goes to the right replacing black with white.
 {: .notice--info }
 
 ## Our Ant
