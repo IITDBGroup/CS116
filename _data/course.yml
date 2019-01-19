@@ -5,7 +5,7 @@ syllabus: assets/syllabus.pdf
 where: "IIT Tower 6D6-1"
 when: "Mon + Wed, 1:50 pm - 2:40 pm"
 lab:
-  where: "TBA"
+  where: "IIT Tower 14C5-1"
   when: "Fri, 1:50 pm - 2:40 pm"
 github_repos:  IITDBGroup/CS116
 midterm:

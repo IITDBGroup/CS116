@@ -14,7 +14,6 @@ tasks:
 In this task we will revisit some of the classes developed in previous assignments. Your task is to identify exceptional conditions and implement code that deals with these conditions or throws exceptions for conditions that cannot be dealt with in the class itself. Copy the following classes to the package `lecture.lab4`.
 
 * `lecture.lab1.BankAccount`
-* The classes implementing `lecture.lab2.TextOp` and class `lecture.lab2.TextDoc` from lab assignment 2
 * `lecture.lab3.BlockWorld` and `lecture.lab3.Ant`
 
 > Add a text file `explanations.txt` into folder `lecture/lab4` in which you explain the exceptional conditions you have identified and how you address them
