@@ -56,19 +56,21 @@ public String getCell(int row, int column) throws Exception;
 * `setCell` - replaces the value at cell (a column of a particular row) with `value` or throws an exception if no such cell exists.
 
 ~~~java
-public String setCell(int row, int column, String value) throws Exception;
+public void setCell(int row, int column, String value) throws Exception;
 ~~~
 
 * `appendRow` add the provided row to the end of the table increasing the number of rows by 1. Throws an exception if `row` does not have the right number of values.
 
 ~~~java
-public String appendRow(String[] row) throws Exception;
+public void appendRow(String[] row) throws Exception;
 ~~~
 
+* `getColumnNames` - returns all column names as a `String[]`.
 * `getColumnName` - returns the name of column at position `pos` or throws and exception if no such column exists.
 * `getColumnPos` - returns the position of the column `name` named or throws and exception if no such column exists.
 
 ~~~java
+public String[] getColumnNames();
 public String getColumnName(int pos) throws Exception;
 public int getColumnPos(String name) throws Exception;
 ~~~
@@ -90,10 +92,12 @@ Method `readCSV` reads a table from a CSV file and returns a `DataFrame` storing
 
 Method `writeToCSV` takes a data frame and writes the table is represents to a CSV file.
 
-> This method needs to handle I/O errors.
+> This method needs to handle I/O errors. Also if the file already exists an exception should be thrown instead of modifying the file.
 {: .notice--danger}
 
-## The CSV File Format
+### Test Case
+
+### The CSV File Format
 
 The **CSV** (**C**omma **S**eparated **V**alues) file format is a textual format for storing tabular data. The first line of a CSV file may be a header which lists the names of columns of the table. All the following lines are the data where each line corresponds to a row in the table. Both the column names and column values of a row are separated using comma (`","`), hence the name. For instance, shown below is the content of a CSV file which stores a table with 3 columns (`Name`, `Age`, `Salary`) and three rows. For example, the first row is denotes a person with name `Peter` who is `45` years old and earns `30000`.
 
