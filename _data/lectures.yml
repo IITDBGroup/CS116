@@ -31,6 +31,12 @@
   description: "We will learn about how to comment our code and automatically create documentation from these comments."
   numdates: 1
 
+- title: "Recursion"
+  reading: "Textbook chapter 13"
+  notebooks: [ Recursion ]
+  description: "We will learn about recursion."
+  numdates: 2
+
 - title: "Introduction to Algorithms: Searching and Sorting"
   notebooks: [ SearchAndSort ]
   slides: [ search_and_sort ]
@@ -41,12 +47,6 @@
   reading: "Textbook Chapter 15"
   slides: [ complexity ]
   description: "We will learn how to analyze the runtime complexity of an algorithm."
-  numdates: 2
-
-- title: "Recursion"
-  reading: "Textbook chapter 13"
-  notebooks: [ Recursion ]
-  description: "We will learn about recursion."
   numdates: 2
 
 - title: "Reflection, Annotations, and Generics"

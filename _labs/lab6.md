@@ -1,13 +1,14 @@
 ---
 title: Lab 6
-shortdescription: "Searching and Sorting"
+shortdescription: "Recursion"
 due: 8
 tasks:
-  - points: 10
-    shortdescription: "Searching for friends."
-  - points: 10
-    shortdescription: "Sorting collections"
+  - points: 4
+    shortdescription: ""
+  - points: 16
+    shortdescription: ""
 ---
+
 
 ## {{ page.tasks[0].shortdescription }}
 

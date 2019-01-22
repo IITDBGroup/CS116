@@ -97,6 +97,8 @@ Method `writeToCSV` takes a data frame and writes the table is represents to a C
 
 ### Test Case
 
+Write a class `TestDataFrameCSV` whose `main` method creates a data frame from the file `animals.csv` that we have uploaded to your git repos. Add new animals *lion* and *tiger* as new rows to the dataframe and then write this updated data frame to a file called `new_animals.csv`. You should determine reasonable values for the other columns (length, weight, ...).
+
 ### The CSV File Format
 
 The **CSV** (**C**omma **S**eparated **V**alues) file format is a textual format for storing tabular data. The first line of a CSV file may be a header which lists the names of columns of the table. All the following lines are the data where each line corresponds to a row in the table. Both the column names and column values of a row are separated using comma (`","`), hence the name. For instance, shown below is the content of a CSV file which stores a table with 3 columns (`Name`, `Age`, `Salary`) and three rows. For example, the first row is denotes a person with name `Peter` who is `45` years old and earns `30000`.
