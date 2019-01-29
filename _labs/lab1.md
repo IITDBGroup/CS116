@@ -33,12 +33,12 @@ Create a savings account for customer `Alice` with a withdrawl limit of `$50.0`.
 ### Bob's life (6 Points)
 
 Design and implement a class `BobsLife` in package `lecture.lab1` that simulates a simple virtual world. In this world there is a person called Bob that can be at either one of three locations: At home, at work, or at the gym. Bob has three characteristics: his `hunger`, his `fitness`, and the `dollars` (positive integer number) he owns. The class should have an instance method called `move` that moves Bob from his current location (`home`, `work`, or `gym`) to a new location.
-The simulation starts at time `0`. Time moves in steps. The simulation is moved forward by one step manually by calling an instance method `nextTime()`. Depending on Bob's location when `nextStep` is called, the following happens:
+The simulation starts at time `0`. Time moves in steps. The simulation is moved forward by one step manually by calling an instance method `nextTime()`. Depending on Bob's location when `nextTime` is called, the following happens:
 * If Bob is at `home`, then his `hunger` is decreased by 3, because he eats a meal. However, the `hunger` can not drop below `0`. Furthermore, his `dollars` are decreased by `1` because food costs money.
 * If Bob is at `work`, then his `hunger` is increased by 2, because working makes hungry. Furthermore, his `dollars` are increased by `3` (he earns money at his job). Also he has a desk job and so his `fitness` decreases by 1.
 * If Bob is at the `gym`, then his `hunger` is increased by `3` because workout makes hungry. His `dollars` are decrease by `2` since the `gym` costs money. On the positive side his `fitness` increases by `2`.
 
-The virtual world is quite harsh. If Bob's `hunger` goes above 6 then the poor guy starves to death. If his `dollars` drop below zero than he is broke and is thrown into jail for a life time sentence. If his `fitness` is `0` then he dies of a heart attack. The class should keep track of whether Bob is dead or in jail. If this is the case then it should no longer be possible to move Bob to another location and his characteristics do no longer change if the `nextStep` function is called.
+The virtual world is quite harsh. If Bob's `hunger` goes above 6 then the poor guy starves to death. If his `dollars` drop below zero than he is broke and is thrown into jail for a life time sentence. If his `fitness` is `0` then he dies of a heart attack. The class should keep track of whether Bob is dead or in jail. If this is the case then it should no longer be possible to move Bob to another location and his characteristics do no longer change if the `nextTime` function is called.
 The constructor of the  class `BobsLife` should allow all the parameters of the simulation to be set (Bob's initial location and Bob's initial characteristics).
 
 ## {{ page.tasks[1].shortdescription }}
