@@ -3,7 +3,7 @@
 #  home: "http://www.cs.iit.edu/~glavic/"
 #  phone: 312 312 312
   location: SB 108
-  officehours: "Wednesdays, 5:00 pm - 6:00 pm"
+  officehours: "Wed, 5:00 pm - 6:00 pm"
   lab: CS116-L06
   type: undergraduate
 - name: "Noah Song"
@@ -11,7 +11,7 @@
 #  home: "http://www.cs.iit.edu/~glavic/"
 #  phone: 312 312 312
   location: SB 108
-  officehours: "Thursdays, 1:50 pm - 3:05 pm"
+  officehours: "Thu, 1:50 pm - 3:05 pm"
   lab: CS116-L06
   type: undergraduate
 - name: "Shaokang Jiang"
@@ -19,11 +19,11 @@
 #  home: "http://www.cs.iit.edu/~glavic/"
 #  phone: 312 312 312
   location: SB 108
-  officehours: "Fridays, 3:00 pm - 4:00 pm"
+  officehours: "Fri, 3:00 pm - 4:00 pm"
   lab: CS116-L07
   type: undergraduate
 - name: Suresh Subramanian
   email: ssubra20@hawk.iit.edu
   location: "SB 019"
-  offiehours: "Wednesdays + Thursdays, 3:00 pm - 4:00 pm"
+  officehours: "Wed + Thu, 3:00 pm - 4:00 pm"
   type: graduate
