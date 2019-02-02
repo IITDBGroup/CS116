@@ -17,7 +17,7 @@ Writing a `toString` method for data objects can be a highly repetitive task sin
 public static String stringify(Object o);
 ~~~
 
-which takes an object of any class and serializes that all fields. For fields of a primitive type you should use the `toString` methods of the corresponding wrapper class , e.g., `Integer` for `int`. For reference types, you need to recurse to use `stringify` to serialize the object. The output format should be as follows:
+which takes an object of any class and serializes that all fields. For fields of a primitive type, wrapper type (e.g., `Integer`) or `String` you should use the `toString` methods of the corresponding wrapper class, e.g., `Integer` for `int`. For reference types, you need to recurse to use `stringify` to serialize the object. The output format should be as follows:
 
 ```shell
 { CLASS@id
@@ -70,6 +70,10 @@ n1 -> n2;
 > Note that some datastructures may be have cicular references, e.g., in a doubly linked list a list cell has a reference to the following and the previous cell (as illustrated below). This would lead to endless recursion unless you keep track of which objects have already been serialized. To solve this problem you need to keep track of every Object that stringify has seen already using an appropriate collection datastructure. Then for each object that should be processed you need to first check whether the object has been processed before already. If so, just output `@id` where `id` is the result of `System.identifyHashCode(o)` for the object instead of recursing.
 {: .notice--danger }
 
+> Note that the `getFields` method of `Class` does not return private fields of a class. You have to call `getDeclaredFields`. Furthermore, per default, you will not use a `Field` object to access a private field unless you call `setAccessible(true)` on this object.
+{: .notice--danger }
+
+
 {% graphviz %}
 digraph {
 
@@ -106,7 +110,9 @@ Furthermore, implement two annotations `StringifiyIgnore` and `StringifyMethodNa
 * `StringifyIgnore` can be placed on a field. Any field with this annotation should be ignored by `Stringify`
 * `StringifyToStringMethod(String methodname)` can be placed on a class. If `Stringify` has to serialize an instance of this class, then it does so by calling `methodname` instead of recursing. `methodname` is expected to have no parameters and return a `String`.
 
+### Testcase
 
+Write a testclass `ListCell` as explained above and write a JUnit test that tests the serialization of several lists build using this class.
 
 ## {{ page.tasks[1].shortdescription }}
 
@@ -115,7 +121,9 @@ In this task you will implement a binary tree datastructure as a class `Tree` in
 > To iterate over all the elements in the tree use one of the traversal methods discussed in class.
 {: .notice--warning}
 
-As a test case write a main method that create the following tree of `Person` objects, searches through the elements of the tree using the `iterator()` method of the `Tree` class and prints every Person whose name starts with a `B`, and finally serializes the tree using the `Stringifier` class implemented in the previous task.
+### Testcase
+
+As a class `Person` that stores a name (`String`) and then use this class to write a JUnit test case that create the following tree of `Person` objects, searches through the elements of the tree using the `iterator()` method of the `Tree` class and creates a list of the name of every Person whose name starts with a `B` and compares this result against an expected list. Also write a test case in this JUnit test that serializes the tree using the `Stringifier` class implemented in the previous task and compares against the expected outcome.
 
 {% digraph %}
 node [style="rounded,filled", fillcolor="lightcyan1"];
