@@ -36,7 +36,7 @@ title: "Debugging, Testing, and Logging"
 	## What is debugging?
 
 	* **Debugging** is the action of tracing and fixing bugs
-	* What activiates are involved in debugging?
+	* What activities are involved in debugging?
 	  * Read source code
 	  * Run program for test inputs and observe its output
 	  * Use a **debugger** to inspect what happens during program execution
@@ -50,7 +50,7 @@ title: "Debugging, Testing, and Logging"
 	* A **Debugger** is a program that allows a user to control the execution of a program and inspect its state
 	* This entails:
 	  * **Controlling execution**
-	  * **Inspecting variable state**
+	  * **Inspecting and modifying variable state**
   </textarea>
 </section>
 
@@ -61,27 +61,186 @@ title: "Debugging, Testing, and Logging"
 	* Most debuggers allow ...
 	  * Pausing the execution of the program
 	  * Executing one statement at a time in a stepwise manner
-	  * Set **breakpoints**: statements where the debugger will automatically stop execution
+	  * Set **breakpoints**: statements where the debugger will automatically stop execution when they are executed
+	  * **watchpoints**: expressions whose value is tracked during program execution
   </textarea>
 </section>
 
 <section data-markdown>
   <textarea data-template>
-	## Inspecting variables
+	## Example Debugging in Eclipse
+
+	![]({{ site.baseurl }}/assets/images/eclipse_debugger.png)
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Testing
   </textarea>
 </section>
 
 
 <section data-markdown>
   <textarea data-template>
-	# Software Testing
+	## Software Testing
+
+	* **black-box testing** - test the functionality of a piece of software irrespective of its internas
+	* **white-box testing** - testing the interal components of a piece of software and not just it's compliance with an API specification
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Black-box testing
+
+   * In black-box testing we only use the external API of a piece of software and check whether it complies with its specification, but do not test internas of compontents that implement the API
+   * For instance, if we have a implementation of a List datastructure as a singly linked list then we can test whether the length of the list is 1 after inserting one element into an empty list, but we will not test whether it elements are linked correctly since this is not part of the API of a List
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## White-box testing
+
+	* In white-box testing the implementation of a component is taken into account when testing. That is, we also test internal implementation details.
+	* For instance, if we have a implementation of a List datastructure as a singly linked list then we would also test that the pointers of the linked cells are correct
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Testing in Java with JUnit
+
+	* **JUnit** is a testing framework for Java
+	* In Junit you use annotations to mark the methods of a class as test cases
+	   * `@Test` marks a method as a test case
+	* In test case methods you can compare expected results against actual results
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## JUnit Testcase
+
+	```java
+	public class MyTestCases {
+
+	     @Test
+	     public void testOne() {
+	     ...
+	     }
+
+	     ...
+	}
+	```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## JUnit Assertions
+
+	* Assertions are used to test conditions. JUnit stops a test case and considers it failed as long as an assertion method called from the test case failes
+	* For instance, `assertEquals(a,b)` fails the test case if `a` is not equal to be `b`
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## JUnit Assertions
+
+	```java
+	...
+	@Test
+	public void test() {
+	   assertEquals(1,1); // test succesful so far
+	   assertEquals(2,3); // this fails the test
+	}
+	```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Test Suites
+
+	* JUnit allows test cases to be grouped hierarchically into test suites
+	* This is done by defining a new class without any content and specify through annotation which packages and/or test classes should be part of the suite
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Test Suites
+
+```java
+@RunWith(JUnitPlatform.class) // run this suite with JUnit
+@SelectClasses( { MyFirstTestClass.class, MySecondTestClass }) // array of Class objects for test classes to make part of the suite
+@SelectPackages( { "edu.iit.mytests" } ) // array of names of package that contain test classes that should be part of the suite
+public class MySuite
+{
+}
+```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Running Tests with JUnit
+
+	* JUnit provides both a commandline method as well as a GUI framework for running tests
+	* Tests are represented in a tree structure based on their hierarchical organization into suites and test classes
+	* A test corresponding to a class is consider succesful if all of the test methods of this class are succesful
+	* A test suite is successful if all the packages and classes of the suite are successful
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Logging
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Logging
+
+	* Logging means outputting messages during program execution to expose state and events in program execution
+	* We already saw simple logging using `System.out.printf` and `System.out.println`
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Disadvantages of Logging with System.out
+
+	* No support for selectively turning on/off logging
+	* No support for re-routing log output (e.g., to a file)
+	* No support for formatting log output (e.g., print class which creates the log output)
   </textarea>
 </section>
 
 
 <section data-markdown>
   <textarea data-template>
-	# Testing vs. Debugging vs. Logging
+	## Java Built-in Logging
+
+	* `Logger` objects are used to send log output. Each Logger has a name. It is customary to create a separate logger for each class using the name of the class
+	```java
+	public class MyClass {
+	private final Logger log = LogManager.getLogger(MyClass.class);
+	```
+	* `Handler` objects process log messages, e.g., output them to files
+	* `Formatter` objects format log messages
+	* Log levels - assign log messages to a priority
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	# Summary
   </textarea>
 </section>
 
@@ -95,7 +254,7 @@ title: "Debugging, Testing, and Logging"
 	* Testing is a **proactive** technique
 	  * Before deploying our program we run tests to determine whether it is behaving as expected
 	* Logging is a type of **provisioning**
-	  * We add log
+	  * We add log outputs to ease debugging and retroactive analysis of errors
   </textarea>
 </section>
 
