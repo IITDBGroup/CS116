@@ -14,9 +14,12 @@ tasks:
 ## {{ page.tasks[0].shortdescription }}
 
 In this task we will debug an error in a provided class using either `jdb` (see [here]({{ site.baseurl }}/lectures/java_tools.html)), the debugger in `Eclipse`, or any other Java debugger.
-We have uploaded a java file `` to your git repository.
+We have uploaded a java file `lecture.lab5.ListOps` to your git repository. This class provides two operations on lists:
 
-Your task is to use a debugger to determine the cause of the errors and fix them.
+1) Reversing the order of elements in a list
+2) Searching for an element in a sorted list using binary search
+
+Both methods have errors and do not function correctly. Your task is to use a debugger to determine the cause of the errors and fix them. As a deliverable we expect a fixed version of this class.
 
 
 ## {{ page.tasks[1].shortdescription }}
