@@ -4,6 +4,8 @@
 package lecture;
 
 /**
+ * A generic list datastructure.
+ * 
  * @author lord_pretzel
  *
  */
