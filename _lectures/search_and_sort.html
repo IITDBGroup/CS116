@@ -12,3 +12,418 @@ title: "Basic Algorithms - Searching and Sorting"
 		**Semester**: Spring 2019
 	</textarea>
 </section>
+
+<section data-markdown>
+  <textarea data-template>
+	# What is an Algorithm?
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Origin of the word
+
+	* The word stems from a latinization of the name of a Persian mathemetician
+	  * Muhammad ibn Musa al-Khwarizmi
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Inputs and Outputs
+
+* Since an algorithm expecifies how to compute a particular function, we have to specify what the input and output of this function are
+
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## How to specify an algorithm
+* Since we want a formal specification we need to decide on a suitable model to express this specification, e.g.,
+  * An abstract model of computation like Turing machines or the lambda calculus which have a well-speicified semantics
+  * An informal specification like pseudoe code or English
+  * An actual programming language like Java
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Example Algorithm - Find largest number
+
+	* **Input**: a list of numbers
+	* **Output**: the largest number from this list
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Example Algorithm - English Specification
+
+	* **Input**: a list of numbers
+	* **Output**: the largest number from this list
+
+	```shell
+- If the list is empty return 0
+- If the list is non-empty then initially the largest number is the first number of the list
+- Set the current list element to be the first element of the list
+- Then repeat the following steps until the end of the list is reached:
+	- If the current list element is larger then the current largest number then it is the new largest number
+	- Move to the next element in the list
+- Return the current largest number
+	```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Example Algorithm - Pseudocode
+
+```shell
+Input: list l
+Output: max
+if list is empty
+  return 0
+max = getFirst(l)
+for i in l
+  if i > max
+    max = i
+return max
+```
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Example Algorithm - Java
+
+	* **Input**: a list of numbers
+	* **Output**: the largest number from this list
+
+```java
+public int findLargest(List<Integer> in) {
+  int max;
+  if (in.size() == 0)
+    return 0;
+  max = in.get(0);
+  for(Integer val: in)
+    max = (val > max) ? val : max;
+  return max;
+}
+```
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## History of algorithms as specifications of computable functions
+	* Ancient Greece
+	  * [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+	  * [Eclids Algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm)
+	* Bablylonioan Clay Tablets
+	  * [https://en.wikipedia.org/wiki/Babylonian_astronomy](https://en.wikipedia.org/wiki/Babylonian_astronomy) - algorithms for computing astronomical events
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Searching
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## What do we mean by searching?
+
+	* Given some collection of elements find a specific element in the collection
+	  * here define collection quite broadly including collection data structures, trees, graphs, and more
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## What do we mean by searching?
+
+	* In this course we will focus on search in lists/arrays
+	  * most of the time we will assume that there is an efficient way to access the $i^{th}$ element of a list $l$ (counting from $0$) denoted as $l[i]$
+	  * we use $l[x:y]$ to denote a list containing all elements of $l$ between positions $x$ and $y$
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Searching in a list
+
+	* We have to distinguish between two cases
+	  * the list is unsorted
+	  * the elements of the list are sorted according to an order $\leq_T$ for the type $T$ of elements stored in the list
+	* Do we want the position or just check existance?
+	  * return `boolean` indicating whether the element exists in the list or not
+	  * return the position of the element in the list or a dummy position (e.g., `-1`) if  it does not exist
+  </textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## Searching in an unsorted list
+
+* Simple, we just have to look at all elements until we either reach the end of the list (the element is not there, return `false`) or find an element (return `true`).
+
+```java
+public boolean search(List<Integer> in, int el) {
+	for(int i: in) {
+		if(i == el)
+			return true;
+	}
+	return false;
+}
+```
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## Searching in an unsorted list - Performance
+
+* How many elements do we have to look at?
+  * Depends on the size of the list (say $n$)
+  * Depends on the sort order. On average will have to look at have the elements: $\frac{n}{2}$
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## Searching in a sorted list
+
+* If the list is sorted, then more efficient search methods can be employed
+
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## Binary Search
+
+* Consider a list $l$ with $n$ elements sorted according to some order $\leq_T$ and we are searching for an element $e$. Let us consider the following observation:
+
+* Compare  $l[mid]$ where $mid = \lfloor \frac{n}{2} \rfloor$ with $e$:
+  * $l[mid] == e$ then we have found $e$
+  * if $l[mid] >_{T} e$ then since $l$ is sorted, $e$ has to be in $l[0]$ and $l[mid-1]$
+  * if $l[mid] <_{T} e$ then since $l$ is sorted, $e$ has to be in $l[mid+1]$ and $l[n-1]$
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## Binary Search
+
+* What have we done?
+  * We did a single comparison ($l[mid]$ with $e$)
+  * Based on the result we reduced the original search to a search over a list of half the size!
+    * either we have to search in $l[0:mid-1]$ or in $l[md+1:n-1]$
+</textarea>
+</section>
+
+
+<section data-markdown>
+<textarea data-template>
+## Binary Search
+* The new problem is again a search problem!
+  * We can repeatedly apply this trick
+  * At some points we have reduced the problem to one of search for the element in a single element list which is trivial
+  * How many steps do we need? **Answer:** $\log_2 (n)$
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## Binary Search
+
+* Binary search is the algorithm we have outlined on the previous slide
+
+```java
+boolean binSearch(List<Integer> l, int e, int low, int high) {
+   int mid = (low + high) / 2;
+   if (low > high)
+       return false;
+   if (e == l.get(mid))
+       return true;
+   else if (e < l.get(mid))
+       return binSearch(l, e, low, mid - 1);
+   else if (e > l.get(mid))
+       return binSearch(l, e, mid + 1, high);
+}
+```
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## Binary versus Linear Search
+* Runtime:
+  * **Binary Search**: logarithmic ($\log_2(n)$)
+  * **Linear Search**: linear ($n$)
+* Requirements: binary search only works if the input is sorted
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+# Sorting
+</textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Sorting a list
+
+	* Sorting a list:
+	  * **input**: an unsorted list, a sort order for the elements of the list (optional)
+	  * **output**: a sorted list
+	* Given a **total order** $\leq_T$, what does it mean for a list $l$ to be sorted?
+	  * If $i < j$ then $l[i] \leq_T l[j]$
+  </textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## What is a total order?
+
+* Assume a set $\mathcal{S}$ of elements
+* A binary relation $\mathcal{R}$ over $\mathcal{S}$ is a subset of $\mathcal{S} \times \mathcal{S}$, i.e., a set of pairs of elements from $\mathcal{S}$
+</textarea>
+</section>
+
+
+<section data-markdown>
+<textarea data-template>
+## What is a total order?
+
+* A binary relation $\mathcal{R}$ is a total order over $\mathcal{S}$ if all of the following conditions hold:
+  * **Antisymmetric**: $\forall a,b \in \mathcal{S}: (a,b) \in \mathcal{R} \wedge (b,a) \in \mathcal{R} \rightarrow a = b$
+  * **Transitive**:  $\forall a,b,c \in \mathcal{S}: (a,b) \in \mathcal{R} \wedge (b,c) \in \mathcal{R} \rightarrow (a,c) \in \mathcal{R}$
+  * **Connex property**: $\forall a,b \in \mathcal{S}: (a,b) \in \mathcal{R} \vee (b,a) \in \mathcal{R}$
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## Examples of total orders
+
+* $\mathbb{N}$ (the natural numbers) with smaller than, e.g., $1 \leq 3$, $4 \not\leq 2$
+* **Strings** in lexicographical order, e.g., $ab \leq g$
+* **Persons** in lexicographical order of the SSN (assuming SSN is unique)
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+	## Sorting algorithms
+
+* Let's brainstorm about how we could do this
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## SelectionSort
+
+* Find the smallest element in the list and move it to beginning of the list. Repeat this process for $l[1:n-1]$, $l[2:n-1]$, ...
+```java
+public static void sort(int[] l) {
+   for(int i = 0; i < l.length - 1; i++) {
+	   int min = l[i];
+	   int pos = i;
+
+	   for(int j = i+1; j < l.length; j++) {
+		   if(l[j] < min) {
+			   min = l[j];
+			   pos = j;
+		   }
+	   }
+	   swap(l, i, pos);
+   }
+}
+```
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## BubbleSort
+
+* Loop through the list comparing adjacent elements. If $l[i] > l[i+1]$ then switch them. Repeat until the list is sorted
+
+```java
+public static void sort(int[] l) {
+   for(int i = 0; i < l.length - 1; i++) {
+       for(int j = i+1; j < l.length; j++) {
+            if (l[j-1] > l[j]) {
+               int temp = l[j-1];
+               l[j-1] = l[j];
+               l[j] = temp;
+            }
+        }
+    }
+}
+```
+</textarea>
+</section>
+
+
+<section data-markdown>
+<textarea data-template>
+## Quick sort
+
+* Select an element a *pivot*, then split the list into two sublists, one containing all elements smaller or equal to the pivot and the remaining one containing all elements larger than the pivot. Then apply this step recursively to sort the sublists.
+
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+## Quick sort in Java
+
+```java
+private static void qsort(int[] l, int low, int high) {
+	if (low < high) {
+		int mid = partition(l, low, high);
+		qsort(l, low, mid - 1);
+		qsort(l, mid + 1, high);
+	}
+}
+
+private static int partition(int[] l, int low, int high) {
+	int p = l[high]; // choose last element as pivot
+	while(low < high) {
+		if (l[low] > p)
+			swap(l, low, high--);
+		else
+			low++;
+	}
+	return low;
+}
+
+private static void swap(int[] l, int left, int right) {
+	int temp = l[left];
+	l[left] = l[right];
+	l[right] = temp;
+}
+```
+</textarea>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+# Summary
+
+* What is an algorithm
+* Searching in lists/arrays
+* Sorting lists/arrays
+</textarea>
+</section>
