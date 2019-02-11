@@ -28,6 +28,7 @@ public class QuickSort {
             else
                 low++;
         }
+        return low;
     }
     
 }
