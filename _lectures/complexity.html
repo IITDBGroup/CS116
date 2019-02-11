@@ -12,3 +12,210 @@ title: "Computational Complexity"
 		**Semester**: Spring 2019
 	</textarea>
 </section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Analysis of Algorithms
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Analyzing the complexity of algorithms
+
+	* Given an algorithm for a problem we would like to understand how the **runtime** and or **space** consumption of the algorithm is influenced by the size of the algorithm's input
+
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Time Complexity
+	* We typically use $n$ to denote the size of the algorithms input and $T(n)$ to denote how much time the algorithm needs to process an input of size $n$
+
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Space Complexity
+
+	* When measuring space complexity, we typically do not consider the input as part of the sapce needed by the algorithm
+	* Here we focus mainly on time complexity
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Example
+
+	* Consider an algorithm that takes an integer array as input and returns true if the array contains the integer 0 by looping through the elements of the array until the end is reached or 0 has been found
+	* **Input size**: the number of elements in the array
+	* **Runtime**: ?
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Problems with our example
+
+	1. The runtime does not just depend on how large the input is, but also on whether it contains $0$ and if yes where in the array the first $0$ is stored!
+	2. The actual time it takes to iterate over the array depends on which computer we are executing an implementation of the algorithm on
+	  * Some computers are faster than others
+	  * Compilers translate higher-level languages into assembly or the instruction set of a VM. This further complicates life
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Different Types of Complexity
+
+	* To address **problem 1.** we distinguish between:
+	* **Worst-case complexity**: the maximal runtime across all inputs of size $n$
+	  * Interpretation: our algorithm will never be slower than this for a given input size
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Different Types of Complexity
+
+	* and ...
+	* **Average-case complexity**: the runtime averaged over all inputs of size $n$ (optionally weighted by a probability distribution over the inputs)
+	  * Interpretation: given some randomly selected input of size $n$, this is it runtime we can expect
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Making complexity independent of machines
+
+	* To address **problem 2.** we use a measure of runtime that is machine-independent:
+	  1. We assume that the runtime of our algorithm will only differ by a constant factor if run on different machines
+	    * **Note**: this assumption is typically violated in reality, but is still a reasonable assumption
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Making complexity independent of machines
+
+	* To address **problem 2.** we use a measure of runtime that is machine-independent:
+	  2. We use a notation that allows us to express runtime ignoring constant factors
+	    * The **Big-O** notation introduced next fulfills this requirement
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Big-O Notation
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Big-O Notation
+
+	* When measuring the computational complexity of an algorithm given the size of its input we want to abstract from unncessary details
+	* We are interested in the big picture, e.g., does the algorithm take linear time or qudratic time rather than does it talk 15,003 times the input plus 300,456 instructutions to run
+	* Big-O notation is suited well for this purpose, because it expresses the asymtotic growth of a function
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Big-O Notation
+
+	* Given a function $f(x)$ we say that $f(x) \in O(g(x))$ if there exists constants $c$ and $x_0$ such that
+	$$\forall x > x_0: f(x) \leq c \cdot g(x)$$
+	* Inituively, this means that $g$ grows at least as fast as $f$
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Big-O Notation for time complexity
+
+	* How does this notation help us with our problem?
+	* Constant factors are ignored because if $f(x) \in O(g(x))$ then also $c \cdot f(x) \in O(g(x))$
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Import growth factors
+
+	* $O(1)$ is constant time
+	* $O(\log n)$ is logarithmic time
+	* $O(n)$ is linear time
+	* $O(n \cdot \log n)$ is log-linear time
+	* $O(n^2)$ is quadratic time
+	* $O(n^a)$ for some $a \geq 1$ is polynominal time
+	* $O(2^n)$ is exponential time
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	# Example Analysis
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Worst-case complexity
+
+	* Let us first analyze the worst-case complexity of our search for zero algorithm
+	* Clearly the worst-case input is one that does not contain zero since we will loop through all elements of the input array ($n$)
+	* How many array elements do we need to process?
+	  * All of them ($n$)
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Worst-case complexity
+
+	* How many instructions are needed to process one element in the array?
+	  * Not clear, bu it does not matter as long as this number is constant (it does not depend on how large the array is)
+	* So let's say that we need at most $c$ instructions to process one elements, then $T(n) \leq c \cdot n$.
+	* Thus, $T(n) \in O(n)$, i.e., our algorithm has **worst-case linear complexity**
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Average-case complexity
+
+	* Now we need to consider all possible inputs (and provide a probability distribution)
+	* The runtime of our algorithm is only affected by where in the array we have the first zero (because we stop once we have found one zero)
+	* Let us assume that the position of the zero is uniformly distributed, i.e., each position including the case where zero is not in the array has the same probability
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Average-case complexity
+
+	* For the first zero at position $z$ and assuming that we do not need more than $c$ instructions per element:
+	$$T(n) \leq c \cdot z$$
+	* Averaging over all possible positions:
+	$$\frac{\sum_{i=0}^n T(i) + n}{n} \leq c \cdot \frac{n \cdot (n + 1)}{n \cdot 2} = c \cdot \frac{n+1}{2} \in O(n) $$
+	* That is, the average-case complexity of our algorithm is in $O(n)$
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Summary
+	* Analysis of algorithms: **time** and **space** complexity
+	* **Big-O notation** (independent of machine)
+	* **Worst-case** and **average-case** complexity
+  </textarea>
+</section>
