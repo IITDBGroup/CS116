@@ -12,3 +12,59 @@ title: "Potpourri"
 		**Semester**: Spring 2019
 	</textarea>
 </section>
+
+<section data-markdown>
+  <textarea data-template>
+	# Classloaders
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Loading Classes in Java
+
+	* We already talked about the classpath which specifies to the JVM where to search for user-defined classes when starting a Java application
+	* In addition to the classpath Java also allows for classes to be loaded at runtime using a so-called class loader
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Using the build-in classloader
+
+	* `Class.forName(String)` attempts to load the class searching for it on the classpath
+	* Where is this useful?
+	  * Consider an application that can be extended with plugins that are classes that implement a specific interface
+	  * We could let the user specify the names of classes to be loaded as plugins on the command line and then we can load these classes and instantiate them using the class loader and reflection
+	  * That is, the application can be extended with new plugins without requiring it to be recompiled and even without its full source code being available
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Custom class loaders
+
+	* A `ClassLoader` is an object that is responsible for making classes available to the JVM
+	* We need custom class loaders whenever classes are provided though a different mechanism than a class file
+	  * **Example**: assume that we make common classes available through a web server. Then we need to custom classloader to retrieve such classes from the server
+  </textarea>
+</section>
+
+
+<section data-markdown>
+  <textarea data-template>
+	## Example - OSGI
+
+	* **OSGI** (Open Service Gateway Initiative)
+
+![OSGI](https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Osgi_framework.svg/1280px-Osgi_framework.svg.png)
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+	## Example - OSGI
+
+	* Eclipse uses OSGI!
+  </textarea>
+</section>
