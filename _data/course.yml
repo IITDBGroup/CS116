@@ -12,8 +12,8 @@ midterm:
   when: "03/04, 1:50 pm - 2:40 pm"
   where: "IIT Tower 6D6-1"
 final:
-  when: TBA
-  where: TBA
+  when: "05/08, 2:00 pm - 4:00 pm"
+  where: "IIT Tower 6D6-1"
 due:
   project_design: 04/15
   project_implementation: 05/01

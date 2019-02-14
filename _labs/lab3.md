@@ -106,7 +106,7 @@ When creating an ant, the states and transition function should be provided to t
 
 To test the ant class, write a `main` method which creates the ant described below and iteratively prints the state of the world using the same representation as the one used for `toString` of the `InfiniteBlockWorld` except that the position of the ant is shown as character `A`. The simulation should be progressed by a step if the user inputs any string followed by newline  except for the following strings that have special meanings:
 
-* strings starting with `h` - progress the ant by 10 steps at a time
+* strings starting with `d` - progress the ant by 10 steps at a time
 * strings starting with `h` - progress the ant by 100 steps at a time
 * strings starting with `t` - progress the ant by 1000 steps at a time
 * strings that are integer numbers - parse the number and progress the ant by this many steps
