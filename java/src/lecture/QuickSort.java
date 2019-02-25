@@ -2,17 +2,21 @@ package lecture;
 
 public class QuickSort {
     
-    public static void sort(int[] l) {
+    public static void sortIt(int[] l) {
         qsort(l, 0, l.length - 1);
     }
     
     private static void qsort(int[] l, int low, int high) {
         if (low < high) {
-            int mid = partition(l, low, high);
-            qsort(l, low, mid - 1);
-            qsort(l, mid + 1, high);
+            dostuff(l, low, high);
         }
     }
+
+	private static void dostuff(int[] l, int low, int high) {
+		int mid = partition(l, low, high);
+		qsort(l, low, mid - 1);
+		qsort(l, mid + 1, high);
+	}
     
     private static void swap(int[] l, int left, int right) {
         int temp = l[left];
@@ -28,6 +32,7 @@ public class QuickSort {
             else
                 low++;
         }
+        
         return low;
     }
     

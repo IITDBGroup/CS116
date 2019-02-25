@@ -57,12 +57,16 @@ public int[] getBounds();
 This methods returns an array with 4 elements $[ x_{low}, x_{high}, y_{low}, y_{high} ]$ representing a minimal bounding box around the white cells in the blockworld. That is, $x_{low}$ is the lowest x-coordinate (the left-most white cell), $x_{high}$ is the highest x-coordinate (the right-most white cell), $y_{low}$ is the lowest y-coordinate of any  white cell (0 is the first row of the matix!), and $y_{high}$ is the higehst  y-coordinate of any white cell.
 {% endkatexmm %}
 
+> Note that the `InfiniteBlockWorld`'s bounding box is a rectangle, but not necessarily a square.
+{: .notice--info }
+
+
 Test your infinite block world by adding a main method which creates the above example 3-by-3 grid:
 
 ```java
 BlockWorld n = new BlockWorld(3);
 n.setCellColor(-1,-1,true); // set cell at [-1,-1]
-n.setCellColor(2,1,true); // set cell at [1,1]
+n.setCellColor(2,1,true); // set cell at [2,1]
 System.out.println(n.toString());
 ```
 
