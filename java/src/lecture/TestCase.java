@@ -3,6 +3,8 @@ package lecture;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -11,16 +13,22 @@ import org.junit.jupiter.api.Test;
 
 public class TestCase {
     
+	private static List<Integer> l1, l2, l3;
+	
     // method that will be executed once before any test method is run 
     @BeforeAll
     public static void globalSetup() {
-        System.out.println("before all test cases");
+        l1 = List.of(1,2,3);
+        l2 = List.of();
+        l3 = List.of(4,5);
     }
 
     // method that will be executed once before any test method is run 
     @AfterAll
     public static void globalTearDown() {
-        System.out.println("after all test cases");
+        l1 = null;
+        l2 = null;
+        l3 = null;
     }
 
     // method that will be executed before each testcase
@@ -37,14 +45,16 @@ public class TestCase {
     
     // a test case
     @Test
-    public void test1 () {
-        assertEquals(1,1);
+    public void testSeqAccess () {
+        for(int i = 0; i < l1.size(); i++) {
+        	assertTrue(l1.get(i) == i + 1);
+    }
     }
     
     // another test case
     @Test
-    public void test2() {
-        assertEquals(1,2);
+    public void testLength() {
+        assertTrue(l1.size() == 3);
     }
     
     

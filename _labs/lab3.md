@@ -64,7 +64,7 @@ This methods returns an array with 4 elements $[ x_{low}, x_{high}, y_{low}, y_{
 Test your infinite block world by adding a main method which creates the above example 3-by-3 grid:
 
 ```java
-BlockWorld n = new BlockWorld(3);
+InfiniteBlockWorld n = new InfiniteBlockWorld(3);
 n.setCellColor(-1,-1,true); // set cell at [-1,-1]
 n.setCellColor(2,1,true); // set cell at [2,1]
 System.out.println(n.toString());
