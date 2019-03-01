@@ -10,7 +10,7 @@ lab:
 github_repos:  IITDBGroup/CS116
 midterm:
   when: "03/08, 1:50 pm - 2:40 pm"
-  where: "IIT Tower 6D6-1"
+  where: "IIT Tower 14C5-1"
 final:
   when: "05/08, 2:00 pm - 4:00 pm"
   where: "IIT Tower 6D6-1"
