@@ -140,8 +140,8 @@ This behaviour is realized by the transition function shown below. The initial s
 
 | Current State  |Current Color|New State  |New Color|Move to  |
 |--------------|-------------|-------------|---------|---------|
-| FacesLeft    | Black       | FacesBottom | White   | Bottom  |
-| FacesLeft    | White       | FacesTop    | Black   | Top     |
+| FacesLeft    | Black       | FacesTop    | White   | Top     |
+| FacesLeft    | White       | FacesBottom | Black   | Bottom  |
 | FacesRight   | Black       | FacesBottom | White   | Bottom  |
 | FacesRight   | White       | FacesTop    | Black   | Top     |
 | FacesTop     | Black       | FacesRight  | White   | Right   |
@@ -159,17 +159,17 @@ n2 [ label="FaceRight", pos="2,1!" ];
 n3 [ label="FaceTop", shape="doublecircle", pos="1,2!" ];
 n4 [ label="FaceBottom", pos="1,0!" ];
 
-n1 -> n4 [label="0"];
-n1 -> n3 [label="1"];
+n1 -> n4 [label="1"];
+n1 -> n3 [label="0"];
 
-n2 -> n3 [label="0"];
-n2 -> n4 [label="1"];
+n2 -> n3 [label="1"];
+n2 -> n4 [label="0"];
 
-n3 -> n1 [label="0"];
-n3 -> n2 [label="1"];
+n3 -> n1 [label="1"];
+n3 -> n2 [label="0"];
 
-n4 -> n1 [label="1"];
-n4 -> n2 [label="0"];
+n4 -> n1 [label="0"];
+n4 -> n2 [label="1"];
 }
 {% endgraphviz %}
 
