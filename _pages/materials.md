@@ -34,6 +34,17 @@ These notebooks teach you some important packages that are part of the core Java
 * [{{ nb.description }}]({{ site.baseurl }}/notebooks/{{ nb.filename }}.ipynb.html)
 {% endfor %}
 
+# Miscellaneous
+
+These are additional notebooks we have created during class.
+
+{% assign miscnbs = site.data.notebooks | where: "type", "misc" %}
+
+{% for nb in miscnbs %}
+* [{{ nb.description }}]({{ site.baseurl }}/notebooks/{{ nb.filename }}.ipynb.html)
+{% endfor %}
+
+
 # Running the notebooks yourself
 
 I am using [http://beakerx.com/](http://beakerx.com/) for Java notebooks. The easiest way to run beaker is to use docker (see `startNotebook.sh` in the `notebooks` folder).

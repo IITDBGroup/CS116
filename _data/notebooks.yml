@@ -57,3 +57,7 @@
 - description: "Logging"
   filename: Logging
   type: libs
+
+- description: "Lab 3 - some code aids"
+  filename: Lab3Explanations
+  type: misc
