@@ -76,7 +76,7 @@ Write a class `PingPong` with two methods `ping` and `pong`. `ping` waits for 1 
 Consider a square grid of cells which are either blocked or empty (you can use the `BlockWorld` class from lab 3 to store such a grid, e.g., consider white as blocked).
 Write a class `TheMouse` that stores a position of a mouse on the grid and the position of a cell with a piece of cheese on it. Furthermore, this class should have a method `findTheCheese` that calculates a sequence of movements  (the move can move left, up, down, or right) from the mouse's current position to the cell with the cheese. The mouse is not allowed to move to a blocked cell.
 
-> The mouse task is harder than the other two task. To maximize your points start with the first two tasks before attempting to feed the mouse!
+> The mouse task is harder than the other two tasks. To maximize your points start with the first two tasks before attempting to feed the mouse!
 {: .notice--danger }
 
 > Notice that paths can be defined recursively to consist of a starting point followed by a path. Thus, the problem of searching all possible paths between the mouses current position and the cell with the cheese can be broken down into moving into one direction by one cell and then trying all possible paths that start from this cell.
@@ -101,5 +101,20 @@ X       X
 XXXMXXXXX
 ```
 
-> Creating such a large `BlockWorld` programatically is very tedious. Instead you could write a method that takes such a textual description (`String[]`) and creates the corresponding `BlockWorld`.
+> Creating such a large `BlockWorld` programmatically is very tedious. Instead you could write a method that takes such a textual description (`String[]`) and creates the corresponding `BlockWorld`.
 {: .notice--info }
+
+
+For example, one possible path that leads the mouse to the cheese is the following (marked with `o`):
+
+```
+oooooooXX
+oXXXXXXXX
+oXX XXX X
+oX    X X
+oXXX XX X
+ooXX X  X
+XoXX XX X
+Xooo    X
+XXXoXXXXX
+```
