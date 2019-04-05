@@ -55,6 +55,7 @@ public class TestCase {
     @Test
     public void testLength() {
         assertTrue(l1.size() == 3);
+        assertEquals(1,1);
     }
     
     
