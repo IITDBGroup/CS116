@@ -9,7 +9,7 @@ classes: wide
 For the project you will design a contact management system.
 
 The project consists of a design part and an implementation part. The design part is due on {{ site.data.course.due.project_design }} and an implementation part that is due {{ site.data.course.due.project_implementation }}.
-Use one of the group members repositories for collaboration and submission of the code [bitbucket](http://www.bitbucket.org). For more information about git see [here]({{ site.baseurl }}/bootstrap.html#learn-how-to-use-git).
+Use one of the group members repositories for collaboration and submission of the code ([bitbucket](http://www.bitbucket.org)). For more information about git see [here]({{ site.baseurl }}/bootstrap.html#learn-how-to-use-git).
 
 # Administrative Information
 
@@ -50,10 +50,10 @@ For the project you will design a **contact management system**. This entails:
 2. **implement a class that stores and manages all contacts (a set of contacts)**
   - this class should allow addresses to be added, deleted, and searched for
   - use this class to encapsulate handling of contacts
-  - searching is the most open-ended part here. At least you should support searching by name matching on substrings, e.g., searching for `Pet` would return all contacts where their name includes the string `Pet`
+  - searching is the most open-ended part here. At least you should support searching by name where all contacts whose names match the string provided as input are returned, e.g., searching for `Pet` would return all contacts where their name includes the string `Pet`
 3. **implement support for writing contacts to a file and for reading contacts from a file**
   - note that if you want to you can reuse your CSV file management from [lab 4]({{ site.baseurl }}/labs/lab4.html)
 4. **write a command-line or GUI application that allows adding / deleting / and searching contacts**
 
-> It may be useful to process 1-3 in sequence since they rely on each other.
+> It may be useful to process 1-4 in sequence since they rely on each other.
 {: .notice--info }
