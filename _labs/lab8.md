@@ -1,7 +1,7 @@
 ---
 title: Lab 8
 shortdescription: "Reflection and Generics"
-due: 11
+due: 10
 tasks:
   - points: 10
     shortdescription: "Implemented a generic Stringifier using reflection, annotations, and recursion."
