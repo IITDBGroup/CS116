@@ -3,9 +3,9 @@ title: Lab 8
 shortdescription: "Reflection and Generics"
 due: 10
 tasks:
-  - points: 10
+  - points: "10 (bonus)"
     shortdescription: "Implemented a generic Stringifier using reflection, annotations, and recursion."
-  - points: 10
+  - points: "10 (bonus)"
     shortdescription: "Use generics to implement a binary tree that can store any kind of object."
 ---
 

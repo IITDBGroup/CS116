@@ -9,7 +9,7 @@ SCRIPTDIR=$(dirname "${BASH_SOURCE}")
 DEPLOYDIR="${SCRIPTDIR}/../_site/"
 
 echo "BUILD WITH RIGHT PREFIX"
-jekyll clean
-jekyll build
+bundle exec jekyll clean
+bundle exec jekyll build
 echo "DEPLOY ... ${DEPLOYDIR} TO ${SERVER_FULL}"
 ${RSYNC} ${RSYNC_OPTS} "${DEPLOYDIR}" "${SERVER_FULL}"
