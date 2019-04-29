@@ -61,3 +61,6 @@
 - description: "Lab 3 - some code aids"
   filename: Lab3Explanations
   type: misc
+- description: "Lab 7 - hints for expression model and evaluation"
+  filename: Lab7ExpressionTreeExample
+  type: misc

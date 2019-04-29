@@ -1,5 +1,6 @@
 package lecture;
 
+@Maintainer(firstName = "Peter", lastName = "Peterson")
 public class QuickSort {
     
     public static void sortIt(int[] l) {
