@@ -14,3 +14,16 @@ The solutions are available as a notebook [here]({{ site.baseurl }}/notebooks/Mi
 # Final Exam
 
 The final exam will be 120 minutes long on **{{ site.data.course.final.when }}**, in **{{ site.data.course.final.where }}**.
+
+Just like for the midterm, the exam will be submitted through black board. **Please double check your submission to ensure that everything got uploaded correctly.**
+
+The following topics will be covered in the exam:
+
+- **Object-oriented design and inheritance**
+  - design a class based on given requirements
+  - know how and when to use inheritance (sub-classing and interfaces)
+- **Collection data structures**
+  - Understand the use of lists, sets, and maps and be able to determine which data structure is the best fit for a task
+  - Understand the implementation of linked lists and be able to modify/implement linked lists
+- **Using control structures (loops, if-then-else, switch) and expressions**
+  - be able to solve computational problems using methods that involve control structures and expressions
