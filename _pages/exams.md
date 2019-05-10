@@ -28,4 +28,4 @@ The following topics will be covered in the exam:
 - **Using control structures (loops, if-then-else, switch) and expressions**
   - be able to solve computational problems using methods that involve control structures and expressions
 
-The solutions are available as a notebook [here]({{ site.baseurl }}/notebooks/Final.ipynb.html) and as a pdf file [here]({{ site.baseurl }}/assets/final-solutions.pdf)
+The solutions are available as a notebook [here]({{ site.baseurl }}/notebooks/Final.ipynb.html) and as a pdf file [here]({{ site.baseurl }}/assets/final-solution.pdf)
